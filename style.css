@@ -63,7 +63,7 @@ header{
 }
 header .container {
   display: flex;
-  justify-content: space-between; /* branding links, nav helemaal rechts */
+  justify-content: space-between;
   align-items: center;
   gap: 2rem;
   padding: 1rem 2rem;
@@ -108,7 +108,7 @@ header nav{margin-left:auto}
 .hamburger{display:none}
 
 /* ----------------------------------------------------
-   HERO (compacter)
+   HERO
 ---------------------------------------------------- */
 .hero{
   background:#2f2f2f80;
@@ -119,7 +119,7 @@ header nav{margin-left:auto}
   margin:1rem auto;
   padding:1rem 2rem;
 }
-.hero .container{max-width:100%;padding:.5rem 0.5rem}
+.hero .container{max-width:100%;padding:.5rem .5rem}
 .hero h1{font-size:2rem;color:var(--antraciet)}
 .hero p{margin:1rem auto;font-size:16px;color:#fff}
 .btn{
@@ -138,102 +138,57 @@ header nav{margin-left:auto}
   margin:3rem auto;
   padding:0 1rem
 }
-
 .intro-block .container{
   display:grid;
-  grid-template-columns: 250px 1fr;  /* vaste 250px breedte */
+  grid-template-columns: 250px 1fr;
   gap:2rem;
   align-items:center;
 }
-
-.intro-text{
-  max-width:1200px;
-  text-align:left;
-  margin:0
-}
-
-.intro-text h2{
-  font-size:2rem;
-  line-height:1.1;
-  margin:0 0 1.5rem
-}
+.intro-text{text-align:left;margin:0}
+.intro-text h2{font-size:2rem;line-height:1.1;margin:0 0 1.5rem}
 
 /* ----------------------------------------------------
-   PROCES (titel boven twee kolommen)
+   PROCES
 ---------------------------------------------------- */
 .proces{
   max-width: 1200px;
   margin: 3rem auto;
   padding: 0 1rem;
 }
-
 .proces .container {
   display: grid;
-  grid-template-columns: 1fr 250px; /* tekst links flexibel | foto rechts vast */
+  grid-template-columns: 1fr 250px;
   gap: 2rem;
   align-items: center;
 }
-
-.proces-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: left;
-  margin: 0;
-}
-
-.proces-text .section-title {
-  font-size: 2rem;
-  line-height: 1.1;
-  margin: 0 0 1.5rem;
-}
-
-.proces-image {
-  justify-self: end;
-}
-
-.proces-image img {
-  width: 250px;
-  height: auto;
-  border-radius: 6px;
-}
+.proces-text{text-align:left;margin:0;display:flex;flex-direction:column;justify-content:center}
+.proces-text .section-title{font-size:2rem;line-height:1.1;margin:0 0 1.5rem}
+.proces-image{justify-self:end}
+.proces-image img{width:250px;height:auto;border-radius:6px}
 
 /* ----------------------------------------------------
    SERVICES
 ---------------------------------------------------- */
-.services-intro{
-  max-width:1200px; margin:4rem auto 2rem; padding:0 1rem; text-align:center;
-}
+.services-intro{max-width:1200px;margin:4rem auto 2rem;padding:0 1rem;text-align:center}
 .services-intro h2{font-size:2rem;line-height:1.1;margin:0 0 1.5rem}
-
 .services-grid{
-  width:95%;
-  margin:2rem auto 0;
-  padding:0 1rem;
-  display:grid;
-  box-sizing:border-box;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  width:95%;margin:2rem auto 0;padding:0 1rem;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:1.5rem;
 }
 .service-card{
-  background:#fff;
-  padding:1.25rem;
-  border-radius:6px;
-  box-shadow:var(--shadow-sm);
-  text-align:center;
-  overflow:hidden;
-  display:flex;flex-direction:column;height:100%;
+  background:#fff;padding:1.25rem;border-radius:6px;box-shadow:var(--shadow-sm);
+  text-align:center;overflow:hidden;display:flex;flex-direction:column;height:100%;
   transition:transform .25s, box-shadow .25s;
 }
 .service-card:hover{transform:scale(1.08);box-shadow:var(--shadow-md)}
 .service-card .image{width:100%;aspect-ratio:16/9;margin-bottom:1rem;overflow:hidden;border-radius:6px}
-.service-card .image img{width:100%;height:100%;object-fit:cover;display:block}
+.service-card .image img{width:100%;height:100%;object-fit:cover}
 
 /* ----------------------------------------------------
    CONTACT
 ---------------------------------------------------- */
 .Contacteer-ons{margin:2.5rem 0 3rem;text-align:center}
-.Contacteer-ons .container{padding:0 1rem}
 .Contacteer-ons .btn{display:inline-block;margin:0 auto}
 
 /* ----------------------------------------------------
@@ -247,105 +202,54 @@ header nav{margin-left:auto}
 .footer-column h4{font-size:1rem;text-transform:uppercase;margin-bottom:1rem;font-weight:600}
 .footer-logo{max-width:110px;margin-bottom:1rem}
 .footer-bottom{text-align:center;padding-top:.75rem}
-.footer-bottom p{margin:0}
 .footer-bottom a{color:whitesmoke;margin:0 .5rem}
 .footer-bottom a:hover{opacity:.7;color:blue}
 
 /* ----------------------------------------------------
-   TABLET (768–1024)
+   TABLET
 ---------------------------------------------------- */
 @media (min-width:769px) and (max-width:1024px){
   .intro-block .container,
-  .proces .container{
-    grid-template-columns:minmax(260px,360px) minmax(0,1fr);
-  }
+  .proces .container{grid-template-columns:minmax(260px,360px) minmax(0,1fr);}
 }
 
 /* ----------------------------------------------------
-   MOBIEL DEFINITIEVE PATCH (<=768px)
+   MOBIEL (<=768px)
 ---------------------------------------------------- */
 @media (max-width:768px){
 
   /* header */
   header{min-height:300px}
-  header .container{
-    display:flex;justify-content:space-between;align-items:center;
-    padding:.75rem 1rem;gap:.5rem;
-  }
+  header .container{display:flex;justify-content:space-between;align-items:center;padding:.75rem 1rem;gap:.5rem}
   .branding{display:flex;align-items:center;gap:.5rem;flex:1 1 auto}
-  .branding .logo{height:38px;width:auto}
+  .branding .logo{height:42px;width:auto}
   .branding h1{font-size:1.25rem;line-height:1;margin:0}
   .slogan{font-size:.9rem;line-height:1.05;margin:0}
-
-  /* hamburger */
-  .hamburger{
-    display:inline-flex;flex-direction:column;justify-content:center;align-items:center;
-    width:42px;height:42px;flex:0 0 auto;margin-left:.75rem;
-    border:0;border-radius:8px;background:rgba(47,47,47,.35);cursor:pointer;
-  }
+  .hamburger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;width:42px;height:42px;flex:0 0 auto;margin-left:.75rem;border:0;border-radius:8px;background:rgba(47,47,47,.35);cursor:pointer}
   .hamburger-bar{width:22px;height:2px;background:#fafaea;margin:4px 0;border-radius:2px}
-
   header nav ul{display:none !important}
   #primary-nav{width:100%}
-  #primary-nav.open ul{
-    display:flex !important;flex-direction:column;gap:.5rem;margin-top:.75rem;
-    background:rgba(47,47,47,.75);padding:.75rem;border-radius:8px;
-    text-align:center;width:100%;
-  }
+  #primary-nav.open ul{display:flex !important;flex-direction:column;gap:.5rem;margin-top:.75rem;background:rgba(47,47,47,.75);padding:.75rem;border-radius:8px;text-align:center;width:100%}
   #primary-nav.open a{display:block;padding:.75rem 1rem;font-size:1.1rem}
 
   /* hero compacter */
   .hero{margin:.5rem auto;padding:.75rem 1rem}
   .hero h1{font-size:1.4rem;margin-bottom:.5rem}
   .hero p{font-size:.95rem;margin:.5rem auto}
-  .hero .btn{
-    display:block;margin:.5rem auto;width:100%;max-width:300px;
-    padding:.6rem 1rem;
-  }
+  .hero .btn{display:block;margin:.5rem auto;width:100%;max-width:300px;padding:.6rem 1rem}
 
   /* intro & proces onder elkaar */
   .intro-block .container,
   .proces .container{grid-template-columns:1fr}
-  .intro-image, .intro-text, .proces-image, .proces-text{text-align:center;}
+  .intro-image, .intro-text, .proces-image, .proces-text{text-align:center}
   .intro-image img, .proces-image img{margin:0 auto;width:min(250px,85vw)}
-  .proces-text{text-align:center}
-  .proces-image { justify-self: center; } /* <-- fix */
+  .proces-image{justify-self:center} /* fix foto centreren */
 
-  /* footer */
-  .footer-container{grid-template-columns:1fr;text-align:center;gap:1.5rem}
-  .footer-logo{margin:0 auto 1rem}
-  .site-footer ul{list-style:none;padding:0;margin:0}
-  .site-footer li{margin:.25rem 0}
+  /* footer compacter */
+  .site-footer{padding:1.2rem .75rem;font-size:.8rem}
+  .footer-container{grid-template-columns:1fr;text-align:center;gap:1rem}
+  .footer-logo{max-width:80px;margin:0 auto .5rem}
+  .footer-column h4{font-size:.9rem;margin-bottom:.5rem}
+  .footer-column p,.footer-column li{margin:.25rem 0}
+  .footer-bottom{padding-top:.5rem}
 }
-
-@media (max-width: 768px) {
-  /* Footer compacter */
-  .site-footer {
-    padding: 1.2rem 0.75rem;   /* minder ruimte boven/onder */
-    font-size: 0.8rem;         /* kleinere tekst */
-  }
-
-  .footer-container {
-    gap: 1rem;                 /* minder ruimte tussen de blokken */
-  }
-
-  .footer-logo {
-    max-width: 80px;           /* kleiner logo */
-    margin: 0 auto 0.5rem;     /* iets minder witruimte */
-  }
-
-  .footer-column h4 {
-    font-size: 0.9rem;         /* kleinere subtitels */
-    margin-bottom: 0.5rem; 
-  }
-
-  .footer-column p,
-  .footer-column li {
-    margin: 0.25rem 0;         /* minder witruimte per item */
-  }
-
-  .footer-bottom {
-    padding-top: 0.5rem;       /* compacter onderaan */
-  }
-}
-
