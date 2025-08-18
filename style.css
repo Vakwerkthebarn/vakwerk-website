@@ -226,9 +226,9 @@ header nav{margin-left:auto}
 }
 .services-intro h2{font-size:2rem;line-height:1.1;margin:0 0 1.5rem}
 
-/* Grid full-width 100% */
+/* Grid full-width 95% */
 .services-grid{
-  width:100%;
+  width:95%;
   margin:2rem auto 0;
   padding:0 1rem;
   display:grid;
