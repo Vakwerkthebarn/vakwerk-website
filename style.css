@@ -306,9 +306,10 @@ header nav{margin-left:auto}
   /* intro & proces onder elkaar */
   .intro-block .container,
   .proces .container{grid-template-columns:1fr}
-  .intro-image, .intro-text, .proces-image, .proces-text{text-align:center}
+  .intro-image, .intro-text, .proces-image, .proces-text{text-align:center;}
   .intro-image img, .proces-image img{margin:0 auto;width:min(250px,85vw)}
   .proces-text{text-align:center}
+  .proces-image { justify-self: center; } /* <-- fix */
 
   /* footer */
   .footer-container{grid-template-columns:1fr;text-align:center;gap:1.5rem}
@@ -316,3 +317,35 @@ header nav{margin-left:auto}
   .site-footer ul{list-style:none;padding:0;margin:0}
   .site-footer li{margin:.25rem 0}
 }
+
+@media (max-width: 768px) {
+  /* Footer compacter */
+  .site-footer {
+    padding: 1.2rem 0.75rem;   /* minder ruimte boven/onder */
+    font-size: 0.8rem;         /* kleinere tekst */
+  }
+
+  .footer-container {
+    gap: 1rem;                 /* minder ruimte tussen de blokken */
+  }
+
+  .footer-logo {
+    max-width: 80px;           /* kleiner logo */
+    margin: 0 auto 0.5rem;     /* iets minder witruimte */
+  }
+
+  .footer-column h4 {
+    font-size: 0.9rem;         /* kleinere subtitels */
+    margin-bottom: 0.5rem; 
+  }
+
+  .footer-column p,
+  .footer-column li {
+    margin: 0.25rem 0;         /* minder witruimte per item */
+  }
+
+  .footer-bottom {
+    padding-top: 0.5rem;       /* compacter onderaan */
+  }
+}
+
