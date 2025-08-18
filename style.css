@@ -398,3 +398,50 @@ header nav{ margin-left: 0; }     /* not needed when using space-between */
     margin: 0 auto 1rem;
   }
 }
+
+/* ===== MOBILE HEADER FIX ===== */
+@media (max-width: 768px) {
+  header .container{
+    display:flex;
+    align-items:center;          /* alles op één lijn */
+    justify-content:space-between;
+    padding: .75rem 1rem;
+    gap:.5rem;
+  }
+
+  .branding{
+    display:flex;
+    align-items:center;
+    gap:.5rem;
+    flex: 1 1 auto;              /* neemt linkerzijde in */
+  }
+  .branding .logo{ height:38px; width:auto; }
+  .branding h1{ font-size:1.25rem; line-height:1; margin:0; }
+  .slogan{ font-size:.9rem; line-height:1.05; margin:0; }
+
+  /* hamburger helemaal rechts */
+  .hamburger{
+    display:inline-flex;
+    flex: 0 0 auto;              /* geen ruimte “stelen” */
+    margin-left:.75rem;
+  }
+
+  /* voorkom dat het nav-element ruimte duwt */
+  header nav{ margin-left:0; }
+}
+
+/* ===== MOBILE FOOTER LISTS CENTER ===== */
+@media (max-width: 768px){
+  .site-footer .footer-container{
+    grid-template-columns: 1fr;  /* je had dit waarschijnlijk al ergens; herhalen is oké */
+    text-align: center;
+  }
+  .site-footer ul{
+    list-style: none;             /* bullets weg */
+    padding: 0;
+    margin: 0;
+  }
+  .site-footer li{                /* netjes centreren */
+    margin: .25rem 0;
+  }
+}
