@@ -222,7 +222,7 @@ header nav{margin-left:auto}
   header{min-height:300px}
   header .container{display:flex;justify-content:space-between;align-items:center;padding:.75rem 1rem;gap:.5rem}
   .branding{display:flex;align-items:center;gap:.5rem;flex:1 1 auto}
-  .branding .logo{height:42px;width:auto}
+  .branding .logo{height:48px;width:auto}
   .branding h1{font-size:1.25rem;line-height:1;margin:0}
   .slogan{font-size:.9rem;line-height:1.05;margin:0}
   .hamburger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;width:42px;height:42px;flex:0 0 auto;margin-left:.75rem;border:0;border-radius:8px;background:rgba(47,47,47,.35);cursor:pointer}
