@@ -10,6 +10,7 @@
 
 <header>
   <div class="container">
+    <!-- Branding -->
     <div class="branding">
       <img src="Images/logo(2).png" alt="Logo Vakwerk The Barn" class="logo">
       <div>
@@ -17,8 +18,17 @@
         <p class="slogan">HOUT. STIJL. VAKMANSCHAP.</p> 
       </div>
     </div>
-    <nav>
-      <ul>
+
+    <!-- Hamburger knop (alleen zichtbaar op mobiel via CSS) -->
+    <button class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+    </button>
+
+    <!-- Navigatie -->
+    <nav id="primary-nav">
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="realisaties.html">Realisaties</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -168,6 +178,35 @@
   </div>
 </footer>
 
+    <!-- hamburgermenu voor mobiele toestellen -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.querySelector('.hamburger');
+      const nav = document.getElementById('primary-nav');
+      if (!btn || !nav) return;
+
+      btn.addEventListener('click', () => {
+        const open = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(open));
+      });
+
+      // Sluit na klik op een link
+      nav.addEventListener('click', (e) => {
+        if (e.target.closest('a')) {
+          nav.classList.remove('open');
+          btn.setAttribute('aria-expanded','false');
+        }
+      });
+
+      // Escape-toets om menu te sluiten
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          nav.classList.remove('open');
+          btn.setAttribute('aria-expanded','false');
+        }
+      });
+    });
+</script>
 
 </body>
 </html>
