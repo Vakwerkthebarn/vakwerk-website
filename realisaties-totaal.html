@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Realisaties - Vakwerk The Barn</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="branding">
+      <img src="images/logo(2).png" alt="Logo Vakwerk The Barn" class="logo">
+      <div>
+        <h1>Vakwerk The Barn</h1>
+        <p class="slogan">HOUT. STIJL. VAKMANSCHAP.</p>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="realisaties.html" class="active">Realisaties</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- Intro met quote en opsomming -->
+  <section class="realisaties-page">
+    <div class="intro-realisaties">
+      <h2 class="section-title">"Wij creëren ruimtes om in te genieten."</h2>
+      <ul class="vinkjes">
+        <li><strong>Ambachtelijk vakmanschap</strong> tot in de kleinste details</li>
+        <li><strong>Duurzame materialen</strong></li>
+        <li><strong>Uniek ontwerp</strong> volledig op maat</li>
+        <li><strong>Persoonlijke aanpak</strong> met één vast aanspreekpunt</li>
+        <li><strong>Volledige service</strong> van ontwerp tot oplevering</li>
+      </ul>
+    </div>
+
+    <!-- Slider -->
+    <div class="realisaties-slider">
+      <div class="slider">
+        <div class="slides" id="slides" aria-live="polite">
+          <img src="images/houtskelet3.jpg" alt="Project 1 - Houtskeletconstructie">
+          <img src="images/interieur6.jpg" alt="Project 2 - Interieur op maat">
+          <img src="images/poolhouse1.jpg" alt="Project 3 - Poolhouse">
+          <img src="images/serre1.jpg" alt="Project 4 - Serre">
+          <img src="images/tuinkantoor1.jpg" alt="Project 5 - Tuinkantoor">
+        </div>
+        <button class="prev" type="button" aria-label="Vorige foto" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" type="button" aria-label="Volgende foto" onclick="moveSlide(1)">&#10095;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contactknop -->
+  <section class="Contacteer-ons">
+    <a href="contact.html" class="btn">Contacteer ons</a>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 Vakwerk The Barn | <a href="#">Cookies</a> | <a href="#">Privacybeleid</a></p>
+</footer>
+
+<script>
+  let currentIndex = 0;
+  const slides = document.getElementById("slides");
+
+  function moveSlide(direction) {
+    const totalSlides = slides.children.length;
+    currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+</script>
+
+</body>
+</html>

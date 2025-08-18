@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - Vakwerk The Barn</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Neem contact op met Vakwerk The Barn voor poolhouses, overkappingen en houtwerk op maat." />
+</head>
+<body class="contact-page">
+
+<header>
+  <div class="container">
+    <div class="branding">
+      <img src="images/logo(2).png" alt="Logo Vakwerk The Barn" class="logo">
+      <div>
+        <!-- Site-naam als tekst i.p.v. tweede H1 -->
+        <p class="site-title" aria-label="Vakwerk The Barn">
+          <span style="font-family:'Bebas Neue',sans-serif; font-size:2.8rem; line-height:1; color:#f0f0ed;">Vakwerk The Barn</span>
+        </p>
+        <p class="slogan">HOUT. STIJL. VAKMANSCHAP.</p>
+      </div>
+    </div>
+    <nav aria-label="Hoofdmenu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="realisaties-totaal.html">Realisaties</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- Paginatitel -->
+  <div class="contactname">
+    <h1>"Laat uw idee werkelijkheid worden"</h1>
+    <p>Neem vandaag nog contact met ons op voor een vrijblijvend gesprek of offerte.</p>
+  </div>
+
+  <section class="contact-wrapper" aria-labelledby="contacteer-ons">
+    <div class="contact-section">
+      <!-- Formulier -->
+      <div class="contact-form">
+        <h2 id="contacteer-ons">Contacteer ons</h2>
+        <form action="https://formspree.io/f/mgvzepzg" method="post">
+          <!-- Optioneel: subject + redirect na verzenden -->
+          <input type="hidden" name="_subject" value="Nieuw bericht via website Vakwerk The Barn">
+          <!-- <input type="hidden" name="_next" value="https://jouwdomein.be/bedankt.html"> -->
+
+          <label for="naam">Uw naam</label>
+          <input type="text" id="naam" name="naam" autocomplete="name" required>
+
+          <label for="email">Uw e-mailadres</label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+
+          <label for="bericht">Uw bericht</label>
+          <textarea id="bericht" name="bericht" rows="5" autocomplete="off" required></textarea>
+
+          <button type="submit">Verstuur</button>
+        </form>
+      </div>
+
+      <!-- Bedrijfsgegevens -->
+      <div class="contact-info">
+        <h2>Onze gegevens</h2>
+        <address>
+          <ul>
+            <li>
+              <span class="icon" aria-hidden="true">📍</span>
+              <a href="https://maps.google.com/?q=Bergstraat+27,+3960+Opitter" target="_blank" rel="noopener noreferrer">
+                Bergstraat 27, 3960 Opitter
+              </a>
+            </li>
+            <li>
+              <span class="icon" aria-hidden="true">📞</span>
+              <a href="tel:+32494059091">+32 494 05 90 91</a>
+            </li>
+            <li>
+              <span class="icon" aria-hidden="true">✉️</span>
+              <a href="mailto:info@vakwerkthebarn.be">info@vakwerkthebarn.be</a>
+            </li>
+            <li>
+              <span class="icon" aria-hidden="true">💼</span>
+              BTW nr: BE 1020.522.350
+            </li>
+          </ul>
+        </address>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 Vakwerk The Barn | <a href="#">Cookies</a> | <a href="#">Privacybeleid</a></p>
+</footer>
+
+</body>
+</html>
