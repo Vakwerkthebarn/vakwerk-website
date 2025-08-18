@@ -147,100 +147,625 @@ nav a:hover {
   color: #fafaea; /* tekst blijft licht */
 }
 
-/* =========================
-   MOBIEL – ÉÉN GEZAMENLIJK BLOK
-   - Header: hamburger + kleinere branding
-   - Nav dicht, open via .open
-   - Hero-knoppen met lucht
-   - Intro/Proces centreren
-   - Footer naar 1 kolom
-========================= */
-
-/* Desktop: hamburger verbergen */
-.hamburger { display: none; }
-
+/* === Mobiel menu === */
 @media (max-width: 768px) {
-  /* ---------- HEADER ---------- */
+  header {
+    min-height: 300px; /* optioneel: lagere banner op mobiel */
+  }
 
-  /* Compactere header */
-  header { min-height: 300px; }
-
-  /* Branding links, hamburger rechts op dezelfde lijn */
   header .container {
-    display: flex;
-    flex-direction: row;                 /* naast elkaar */
-    justify-content: space-between;
-    align-items: center;
-    gap: .5rem;
-    padding: 0.75rem 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
   }
 
-  /* Branding kleiner en netjes naast elkaar */
-  .branding {
-    display: flex;
-    align-items: center;
-    gap: .75rem;
-  }
-  .logo { height: 44px; width: auto; }
-  .branding h1 { font-size: 1.4rem; }
-  .slogan { font-size: .95rem; margin: 0; }
-
-  /* Hamburger tonen op mobiel */
-  .hamburger{
-    display:inline-flex;
-    align-items:center; justify-content:center;
-    width:42px; height:42px;
-    margin-left:auto;
-    border:0; border-radius:8px;
-    background: rgba(47,47,47,.35);
-    cursor:pointer;
-  }
-  .hamburger:focus{ outline:2px solid #fff3; outline-offset:2px; }
-
-  /* Bars altijd onder elkaar */
-  .hamburger-bar{
-    display:block;                       /* forceer block (onder elkaar) */
-    width:22px; height:2px;
-    background:#fafaea;
-    margin:4px 0;                        /* verticale ruimte */
-    border-radius:2px;
+  nav ul {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+    width: 100%;
   }
 
-  /* Nav standaard dicht (overrulet oudere styles) */
-  header nav ul { display: none !important; }
-
-  /* Nav container: vol breed en onder header */
-  #primary-nav { width: 100%; }
-
-  /* Open state via JS: <nav id="primary-nav" class="open"> */
-  #primary-nav.open ul{
-    display:flex !important;
-    flex-direction:column;
-    gap:.5rem;
-    margin-top:.75rem;
-    background: rgba(47,47,47,.75);
-    padding:.75rem;
-    border-radius:8px;
-    text-align:center;
-    width:100%;
+  nav a {
+    display: block;              /* volledige klikbare breedte */
+    font-size: 1.4rem;           /* beter leesbaar */
+    padding: 10px 16px;          /* extra ruimte */
   }
 
-  /* Linkstijl mobiel */
-  #primary-nav.open a{
-    display:block;
-    padding:.75rem 1rem;
-    font-size:1.1rem;
-    border-radius:6px;
+  nav a:hover {
+    background-color: rgba(172, 155, 139, 0.555);
+    color: #fafaea;
   }
+}
 
-  /* ---------- OVERIGE MOBIEL-FIXES ---------- */
+
+/* ----------------------------------------------------
+   HERO
+---------------------------------------------------- */
+.hero {
+  background: #2f2f2f80;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 6px; /* Of 0 voor rechte hoeken */;
+  max-width: 100%;
+  margin: 2rem;
+  box-shadow: var(--shadow-md);
+}
+
+.hero h1 {
+  font-size: 2rem;
+  color: var(--antraciet);
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.hero p {
+  margin: 1rem auto;
+  font-size: 1.1rem;
+  color: #fff;
+  padding: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--antraciet);
+  color: #fff;
+  padding: .75rem 1.5rem;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.08s ease;
+}
+.btn:hover {
+  background: #fafaea;
+  color: var(--antraciet);
+  text-decoration: none;
+}
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* ========== INTRO ==========
+   Beeld links – tekst rechts
+*/
+.intro-block {
+  margin: 2rem auto;
+  padding: 0 1rem;
+  max-width: 1200px;
+}
+.intro-block .container {
+  display: grid;
+  grid-template-columns: minmax(280px, 360px) 1fr; /* vaste beeldkolom */
+  gap: 2rem;
+  align-items: center; /* verticaal uitlijnen */
+}
+.intro-image {
+  border-radius: 6px;
+  overflow: hidden;
+  justify-self: start; /* beeld netjes links */
+}
+.intro-image img {
+  width: 100%;
+  height: 360px;          /* consistente hoogte */
+  object-fit: cover;
+  display: block;
+  border-radius: 6px;
+}
+.intro-text {
+  line-height: 1.7;
+  max-width: 70ch; /* prettige regelbreedte standaard */
+  text-align: center;
+}
+
+/* Op hele brede schermen mag de tekst ruimer */
+@media (min-width: 1400px) {
+  .intro-text,
+  .proces-text {
+    max-width: 95ch;
+  }
+}
+
+.intro-text h2 {
+  font-size: 2rem;
+  font-family: 'Bebas Neue', sans-serif;
+  margin: 0 0 1.5rem;   /* altijd 1.5rem lucht eronder */
+}
+
+.intro-text p {
+  margin: 0 0 1rem;  /* altijd 1rem onder elke paragraaf */
+}
+
+/* ====== PROCES (gespiegeld van INTRO) ====== */
+.proces {
+  margin: 4rem auto;
+  padding: 0 1rem;
+  max-width: 1200px;
+}
+
+.proces .container {
+  display: grid;
+  /* tekst links | beeld rechts, zelfde vaste beeldkolom als intro */
+  grid-template-columns: 1fr minmax(280px, 360px);
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Tekst – zelfde typografie als intro */
+.proces-text {
+  line-height: 1.7;
+  max-width: 70ch;
+  text-align: center;
+}
+.proces-text h2 {
+  font-size: 2rem;
+  font-family: 'Bebas Neue', sans-serif;
+  margin: 0 0 1.5rem;   /* altijd 1.5rem lucht eronder */
+}
+
+.proces-text p {
+  margin: 0 0 1rem;  /* altijd 1rem onder elke paragraaf */
+}
+
+/* Beeld – exact dezelfde verhouding/hoogte als intro */
+.proces-image {
+  border-radius: 6px;
+  overflow: hidden;
+  justify-self: end;   /* beeld netjes rechts */
+}
+.proces-image img {
+  width: 100%;
+  height: 360px;       /* consistente hoogte (zelfde als intro) */
+  object-fit: cover;
+  display: block;
+  border-radius: 6px;
+}
+
+/* Brede schermen: tekst ruimer (zelfde als intro) */
+@media (min-width: 1400px) {
+  .proces-text { max-width: 95ch; }
+}
+
+/* Smal (mobiel): onder elkaar, beeld boven of onder naar wens */
+@media (max-width: 768px) {
+  .intro-block .container,
+  .proces .container {
+    grid-template-columns: 1fr;
+  }
+  /* Wil je op mobiel de foto ONDER de tekst in het proces-blok? */
+  .proces-image { order: 2; }
+  .proces-text  { order: 1; }
+}
+
+/* ====== SERVICES/REALISATIES ====== */
+/* SERVICES/REALISATIES TEKST */
+/* ====== SERVICES INTRO (titel + tekst erboven) ====== */
+.services-intro {
+  margin: 4rem auto 2rem;
+  padding: 0 1rem;
+  max-width: 1200px;
+  line-height: 1.7;
+  text-align: center;
+}
+.services-intro h2 {
+  font-size: 2rem;
+  font-family: 'Bebas Neue', sans-serif;
+  margin: 0 0 1.5rem;   /* altijd 1.5rem lucht eronder */
+}
+
+.services-intro p {
+margin-top: 0.5rem;
+}
+
+/* SERVICES/REALISATIES GRID */
+.services-grid {
+  margin: 2rem auto 0;
+  padding: 0 1rem;
+  max-width: 100%;                /* volle breedte */
+  display: grid;
+  gap: 2rem;
+}
+
+/* Desktop: 4 kolommen */
+@media (min-width: 1200px) {
+  .services-grid { grid-template-columns: repeat(4, 1fr); }
+}
+/* Tablet: 2 kolommen */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+}
+/* Mobiel: 1 kolom */
+@media (max-width: 767px) {
+  .services-grid { grid-template-columns: 1fr; }
+}
+
+.service-card {
+  display: block; /* maakt <a> een blok */
+  background: #fff;
+  padding: 1.25rem 1.25rem 1.5rem;
+  border-radius: 6px;
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  overflow: hidden;
+  text-decoration: none; /* geen onderlijning */
+  color: inherit;        /* tekstkleur blijft hetzelfde */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.service-card .image {
+  border-radius: 6px;
+  overflow: hidden;
+  width: 100%;
+  height: 220px;
+  margin-bottom: 1rem;
+}
+
+.service-card .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 6px;
+}
+
+.service-card h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.25rem;
+  margin: 0 0 .25rem;
+}
+.service-card p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.service-card:hover {
+  transform: scale(1.08);  /* lichtjes vergroten */
+  box-shadow: var(--shadow-md); /* wat meer schaduw */
+}
+
+
+/* ----------------------------------------------------
+   CONTACT
+---------------------------------------------------- */
+.contactname {
+  background: var(--olijfgroen);
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  max-width: 1100px;
+  margin: 1rem auto;
+  box-shadow: var(--shadow-md);
+}
+.contactname h1 {
+  font-size: 2rem;
+  color: var(--antraciet);
+  font-family: 'Bebas Neue', sans-serif;
+}
+.contactname p {
+  margin: 1.1rem auto;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.contact-wrapper {
+  max-width: 1100px;
+  margin: 1rem auto;
+  padding: 2rem 1rem;
+  background-color: #2f2f2f33;
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+}
+.contact-section {
+  display: grid;
+  gap: 2rem;
+}
+@media (min-width: 768px) {
+  .contact-section {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.contact-form h2 {
+  font-size: 1.7rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Bebas Neue', sans-serif;
+}
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--olijfgroen);
+  border-radius: 8px;
+  background: #fdfdf8;
+  font-size: 1rem;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--antraciet);
+  box-shadow: 0 0 0 2px rgba(47,47,47,0.1);
+}
+.contact-form button {
+  background-color: var(--antraciet);
+  color: #fff;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.contact-form button:hover {
+  background-color: var(--olijfgroen);
+  color: whitesmoke;
+}
+
+.contact-info {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+.contact-info h2 {
+  font-size: 1.7rem;
+  border-bottom: 2px solid var(--olijfgroen);
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  font-family: 'Bebas Neue', sans-serif;
+}
+.contact-info ul {
+  list-style: none;
+  padding: 1.5rem 1rem 1rem;
+}
+.contact-info li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+.contact-info .icon {
+  font-size: 1.2rem;
+  color: var(--olijfgroen);
+}
+
+/* ----------------------------------------------------
+   Losse contact-knop
+---------------------------------------------------- */
+.Contacteer-ons {
+  text-align: center;
+  margin: 1.5rem;
+}
+
+
+/* ----------------------------------------------------
+   REALISATIES
+---------------------------------------------------- */
+.realisaties-page {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+.intro-realisaties {
+  background: #2f2f2faf;
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  max-width: 900px;
+  margin: 1rem auto;
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+.intro-realisaties h2 {
+  font-size: 1.8rem;
+  color: var(--antraciet);
+  margin-bottom: 0.5rem;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.intro-realisaties li {
+  font-size: 1rem;
+  color: whitesmoke;
+  margin-bottom: 0.3rem;
+  text-align: left;
+}
+
+ul.vinkjes {
+  columns: 2;
+  column-gap: 1rem;
+  list-style: none;
+}
+ul.vinkjes li::before {
+  content: "✔";
+  color: var(--antraciet);
+  margin-right: 0.5rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.gallery-grid img {
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease;
+}
+.gallery-grid img:hover {
+  transform: scale(1.03);
+}
+
+/* ----------------------------------------------------
+   SLIDER
+---------------------------------------------------- */
+.realisaties-slider {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+.slider {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  margin-top: 2rem;
+  background-color: #2f2f2f33;
+}
+.slides {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+.slides img {
+  flex: 0 0 100%;
+  max-height: 65vh;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+}
+.slider button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1rem;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.slider .prev { left: 10px; }
+.slider .next { right: 10px; }
+.slider button:hover {
+  background: rgba(0,0,0,0.7);
+}
+
+/* ----------------------------------------------------
+   FOOTER
+---------------------------------------------------- */
+.site-footer {
+  background: #2f2f2fdd;
+  color: whitesmoke;
+  font-size: .9rem;
+  padding: 2rem 1rem;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* vaste 4 kolommen */
+  gap: 3rem;           /* meer ruimte ertussen */
+  text-align: left;
+}
+
+.footer-column h4 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-column ul li {
+  margin-bottom: 0.5rem;
+}
+.footer-column a {
+  color: whitesmoke;
+  text-decoration: none;
+}
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+.footer-logo {
+  max-width: 110px;
+  margin-bottom: 1rem;
+}
+
+.social-links a {
+  display: inline-block;
+  margin-right: 0.75rem;
+  font-size: 1.2rem;
+  color: #fff;
+  transition: opacity 0.3s ease;
+}
+.social-links a:hover {
+  opacity: 0.7;
+}
+
+.footer-bottom {
+  border-top: none;
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+  text-align: center;
+}
+.footer-bottom a {
+  color: whitesmoke;
+  margin: 0 .5rem;
+}
+.footer-bottom a:hover {
+  opacity: 0.7;
+  color: blue;
+}
+
+
+/* ----------------------------------------------------
+   Opmaak groene tekstblokken
+---------------------------------------------------- */
+
+/* Compacte banners – plak dit ONDERAAN je CSS */
+.hero, .contactname, .intro-realisaties {
+  padding-block: 1rem;
+}
+
+.hero h1,
+.contactname h1,
+.intro-realisaties h2 {
+  margin: 0 0 .35rem;
+  line-height: 1.1;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.hero p {
+  margin-block: 0;        /* geen extra hoogte */
+  margin-inline: auto;    /* behoudt horizontale centrering */
+  line-height: 1.6;
+}
+
+.contactname p {
+  margin: 0;              /* zo compact mogelijk */
+  line-height: 1.4;
+}
+
+/* Tekst/opsomming in de realisaties-intro compacter */
+.intro-realisaties ul { margin: 0; padding: 0; }
+.intro-realisaties li { margin-bottom: .25rem; line-height: 1.4; }
+
+/* Als je ergens een generieke .section-title met grote marge hebt, overrule die hier: */
+.intro-realisaties .section-title { margin-bottom: .35rem; }
+
+/* =========================
+   MOBIEL (max-width: 768px)
+   Alleen de gevraagde fixes
+========================= */
+@media (max-width: 768px) {
 
   /* Hero knoppen met lucht */
   .hero .btn {
     display: block;
     width: 100%;
     max-width: 420px;
-    margin: 0.5rem auto;
+    margin: 0.5rem auto;   /* ruimte tussen knoppen */
   }
 
   /* Intro & Proces – beelden en tekst centreren */
@@ -249,20 +774,97 @@ nav a:hover {
     grid-template-columns: 1fr;   /* onder elkaar */
     text-align: center;
   }
-  .intro-image, .proces-image {
+
+  .intro-image,
+  .proces-image {
     justify-self: center;
     display: flex;
     justify-content: center;
   }
-  .intro-text, .proces-text {
+
+  .intro-text,
+  .proces-text {
     text-align: center;
     margin-inline: auto;
   }
 
-  /* Footer – 1 kolom */
+  /* Footer – van 4 kolommen naar 1 kolom */
   .footer-container {
     grid-template-columns: 1fr;
     text-align: center;
   }
-  .footer-logo { margin: 0 auto 1rem; }
+
+  .footer-logo {
+    margin: 0 auto 1rem;
+  }
+}
+
+/* =========================
+   MOBIEL HEADER – MINIMALE OVERRIDES
+   (zet dit ONDERAAN je CSS)
+========================= */
+.hamburger { display: none; } /* verborgen op desktop */
+
+@media (max-width: 768px) {
+  /* --- schaal branding iets kleiner --- */
+  .logo { height: 44px; width: auto; }
+  .branding { display: flex; align-items: center; gap: .75rem; }
+  .branding h1 { font-size: 1.4rem; }
+  .slogan { font-size: .95rem; margin: 0; }
+
+  /* --- behoud column-layout, maar maak ruimte bovenaan --- */
+  header .container {
+    position: relative;               /* nodig voor absolute hamburger */
+    padding: 0.75rem 1rem 1rem;
+    gap: .5rem;
+    /* laat je bestaande flex-direction hier gewoon staan */
+  }
+
+  /* --- hamburger rechtsboven --- */
+  .hamburger{
+    display:inline-flex;
+    align-items:center; justify-content:center;
+    position:absolute; top: .75rem; right: 1rem;  /* sleutel */
+    width:42px; height:42px;
+    border:0; border-radius:8px;
+    background: rgba(47,47,47,.35);
+    cursor:pointer;
+  }
+  .hamburger:focus{ outline:2px solid #fff3; outline-offset:2px; }
+
+  /* drie streepjes ONDER elkaar */
+  .hamburger-bar{
+    display:block;                    /* forceer block */
+    width:22px; height:2px;
+    background:#fafaea;
+    margin:4px 0;                     /* verticale ruimte */
+    border-radius:2px;
+  }
+
+  /* --- NAV standaard dicht --- */
+  /* overrule oudere mobiele regels die 'm altijd tonen */
+  #primary-nav .nav-links { 
+    display: none !important;         /* dicht */
+  }
+
+  /* --- NAV open state (via JS: nav.classList.toggle('open')) --- */
+  #primary-nav.open .nav-links {
+    display: flex !important;         /* open */
+    flex-direction: column;
+    gap: .5rem;
+    margin-top: .75rem;
+    background: rgba(47,47,47,.75);
+    padding: .75rem;
+    border-radius: 8px;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* link-klikcomfort */
+  #primary-nav.open .nav-links a {
+    display: block;
+    padding: .75rem 1rem;
+    font-size: 1.1rem;
+    border-radius: 6px;
+  }
 }
