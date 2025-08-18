@@ -3,24 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Realisaties - Vakwerk The Barn</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Vakwerk The Barn</title>
+<!-- Font Awesome voor social icons -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/J6MdE3G1mWQXvFhVdGx4eVh1mGxZrV7xKQ3C6vGZfF8vV0C1l7ZCqH5xqk4Z2r5jXgS5kG9mA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Jouw eigen stylesheet -->
+  <link rel="stylesheet" href="style.css?v=20250818-4" />
 </head>
-<body>
+<body class="home-page">
 
 <header>
   <div class="container">
+    <!-- Branding -->
     <div class="branding">
-      <img src="images/logo(2).png" alt="Logo Vakwerk The Barn" class="logo">
+      <img src="Images/logo(2).png" alt="Logo Vakwerk The Barn" class="logo">
       <div>
-        <h1>Vakwerk The Barn</h1>
-        <p class="slogan">HOUT. STIJL. VAKMANSCHAP.</p>
+        <h1>VAKWERK THE BARN</h1> 
+        <p class="slogan">HOUT. STIJL. VAKMANSCHAP.</p> 
       </div>
     </div>
-    <nav>
-      <ul>
+
+    <!-- Hamburger knop (alleen zichtbaar op mobiel via CSS) -->
+    <button class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+    </button>
+
+    <!-- Navigatie -->
+    <nav id="primary-nav">
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="realisaties.html" class="active">Realisaties</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
