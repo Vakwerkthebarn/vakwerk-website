@@ -148,7 +148,7 @@ header nav{margin-left:auto}
 
 .intro-text{
   max-width:1200px;
-  text-align:center;
+  text-align:left;
   margin:0
 }
 
@@ -178,7 +178,7 @@ header nav{margin-left:auto}
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;  /* net als intro */
+  text-align: left;  /* net als intro */
   margin: 0;
 }
 
@@ -326,3 +326,53 @@ header nav{ margin-left: 0; }     /* not needed when using space-between */
 
 /* Make sure nav list has no stray spacing */
 #primary-nav .nav-links{ margin: 0; padding: 0; }
+
+/* ----------------------------------------------------
+   Media-fixes
+---------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+  /* --- HEADER: logo/branding kleiner, links --- */
+  .branding .logo {
+    height: 38px; /* kleiner logo */
+  }
+  .branding h1 {
+    font-size: 1.2rem;
+  }
+  .slogan {
+    font-size: 0.85rem;
+    margin: 0;
+  }
+  header .container {
+    justify-content: space-between; /* branding links, hamburger rechts */
+    align-items: center;
+    gap: 1rem;
+  }
+
+  /* --- BUTTONS: ruimte ertussen --- */
+  .hero .btn {
+    display: block;        /* onder elkaar */
+    margin: 0.5rem auto;   /* verticale ruimte */
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* --- INTRO-IMAGE: centreren op mobiel --- */
+  .intro-image, .intro-text, .proces-image, .proces.intro-text {
+    text-align: center;
+  }
+  .intro-image img, .proces-image img {
+    margin: 0 auto;
+  }
+
+  /* --- FOOTER: responsief onder elkaar --- */
+  .footer-container {
+    grid-template-columns: 1fr; /* één kolom */
+    text-align: center;
+    gap: 1.5rem;
+  }
+  .footer-logo {
+    margin: 0 auto 1rem;
+  }
+}
