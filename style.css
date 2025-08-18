@@ -798,3 +798,78 @@ ul.vinkjes li::before {
     margin: 0 auto 1rem;
   }
 }
+
+/* Desktop: hamburger verbergen */
+.hamburger { display: none; }
+
+/* =========================
+   MOBIEL HEADER (max-width: 768px)
+   - hamburger menu
+   - kleiner logo/branding/slogan
+   - nav ingeklapt tot open-state
+========================= */
+@media (max-width: 768px) {
+  /* Kleiner schalen */
+  .logo { height: 44px; }
+  .branding h1 { font-size: 1.4rem; }
+  .slogan { font-size: .95rem; }
+
+  /* Compactere header-ruimte */
+  header { min-height: 300px; }
+  header .container {
+    padding: 0.75rem 1rem;
+    align-items: center;
+    gap: .5rem;
+    flex-direction: column; /* branding boven, daarna knoppen/nav */
+  }
+
+  /* Hamburger tonen op mobiel */
+  .hamburger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px; height: 42px;
+    margin-left: auto;
+    border: 0; border-radius: 8px;
+    background: rgba(47,47,47,.35);
+    cursor: pointer;
+  }
+  .hamburger:focus { outline: 2px solid #fff3; outline-offset: 2px; }
+  .hamburger-bar {
+    display: block;
+    width: 22px; height: 2px;
+    background: #fafaea;
+    margin: 3px 0;
+    border-radius: 2px;
+  }
+
+  /* Nav standaard dicht op mobiel */
+  /* Let op: jouw <ul> heeft class="nav-links" en <nav> id="primary-nav" */
+  #primary-nav { width: 100%; }
+  #primary-nav .nav-links {
+    display: none;                 /* ingeklapt */
+    flex-direction: column;
+    gap: .5rem;
+    margin-top: .75rem;
+    background: rgba(47,47,47,.75);
+    padding: .75rem;
+    border-radius: 8px;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Open state door JS: nav krijgt .open */
+  #primary-nav.open .nav-links { display: flex; }
+
+  /* Linkopmaak iets compacter op mobiel */
+  #primary-nav .nav-links a {
+    display: block;
+    padding: .75rem 1rem;
+    font-size: 1.1rem;
+    border-radius: 6px;
+  }
+
+  /* Overschrijf oudere mobiele regels die alles altijd toonden */
+  /* (zorgt dat onze 'display:none' hierboven wint) */
+  header nav ul { display: initial; } /* laat onze selector bepalen */
+}
