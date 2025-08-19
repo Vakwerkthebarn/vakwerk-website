@@ -42,7 +42,7 @@ img{max-width:100%;height:auto;display:block}
 .logo{height:60px;width:auto}
 
 /* ----------------------------------------------------
-   GENERIC CONTAINER
+   CONTAINER
 ---------------------------------------------------- */
 .container{
   max-width:1200px;
@@ -62,15 +62,26 @@ header{
   box-shadow:0 4px 8px rgba(0,0,0,.1);
 }
 header .container {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:2rem;
-  padding:1rem 2rem;
-  max-width:100%;
-  margin:0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  /* <-- Belangrijk voor verticale uitlijning */
+  padding: 1rem 2rem;
+  max-width: 100%;
+  margin: 0 auto;
 }
-.branding{display:flex;align-items:center;gap:1rem}
+
+.branding {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.branding img.logo {
+  height: 60px;
+  width: auto;
+  display: block;
+}
+
 .branding h1{
   font-size:2rem;line-height:1;margin:0;color:#f0f0ed;
   font-family:'Oswald',sans-serif;font-weight:400;
@@ -79,8 +90,6 @@ header .container {
   font-size:1.2rem;color:#f0f0ed;margin:.2rem 0 0 .2rem;
   font-family:'Oswald',sans-serif;
 }
-
-/* NAV desktop */
 header nav{margin-left:auto}
 #primary-nav .nav-links{
   list-style:none;
@@ -102,15 +111,13 @@ header nav{margin-left:auto}
   background-color:rgba(172,155,139,.555);
   color:#fafaea;
 }
-
-/* Hamburger default: verborgen op desktop */
 .hamburger{display:none}
 
 /* ----------------------------------------------------
    HERO
 ---------------------------------------------------- */
 .hero{
-  background:#2f2f2f80;
+  background:#2f2f2fbb;
   text-align:center;
   border-radius:6px;
   box-shadow:var(--shadow-md);
@@ -122,10 +129,14 @@ header nav{margin-left:auto}
 .hero h1{font-size:2rem;color:var(--antraciet)}
 .hero p{margin:1rem auto;font-size:16px;color:#fff}
 .btn{
-  display:inline-block;background:rgba(55,120,30,.811);color:#fff;
+  display:inline-block;background:rgba(44, 96, 23, 0.811);color:#fff;
   padding:.75rem 1.5rem;border-radius:6px;font-weight:500;
   transition:background .25s,color .25s,transform .08s;
 }
+.hero .btn:first-of-type {
+  margin-right: 1rem; /* Pas dit aan naar wens */
+}
+
 .btn:hover{background:#fafaea;color:var(--antraciet);text-decoration:none}
 .btn:active{transform:translateY(1px)}
 
@@ -133,9 +144,7 @@ header nav{margin-left:auto}
    INTRO
 ---------------------------------------------------- */
 .intro-block{max-width:1200px;margin:3rem auto;padding:0 1rem}
-.intro-block .container{
-  display:grid;grid-template-columns:250px 1fr;gap:2rem;align-items:center;
-}
+.intro-block .container{display:grid;grid-template-columns:250px 1fr;gap:2rem;align-items:center;}
 .intro-text{text-align:left;margin:0}
 .intro-text h2{font-size:2rem;line-height:1.1;margin:0 0 1.5rem}
 
@@ -143,131 +152,97 @@ header nav{margin-left:auto}
    PROCES
 ---------------------------------------------------- */
 .proces{max-width:1200px;margin:3rem auto;padding:0 1rem}
-.proces .container{
-  display:grid;grid-template-columns:1fr 250px;gap:2rem;align-items:center;
-}
+.proces .container{display:grid;grid-template-columns:1fr 250px;gap:2rem;align-items:center;}
 .proces-text{text-align:left;margin:0;display:flex;flex-direction:column;justify-content:center}
 .proces-text .section-title{font-size:2rem;line-height:1.1;margin:0 0 1.5rem}
 .proces-image{justify-self:end}
 .proces-image img{width:250px;height:auto;border-radius:6px}
 
 /* ----------------------------------------------------
-   SERVICES
+   SERVICES / REALISATIES-GRID
 ---------------------------------------------------- */
-.services-intro{max-width:1200px;margin:4rem auto 2rem;padding:0 1rem;text-align:center}
-.services-intro h2{font-size:2rem;line-height:1.1;margin:0 0 1.5rem}
-.services-grid{
-  width:95%;margin:2rem auto 0;padding:0 1rem;
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:1.5rem;
+.services-section {
+  margin: 3rem auto;
+  padding: 0 1rem;
+  max-width: 1200px;
 }
-.service-card{
-  background:#fff;padding:1.25rem;border-radius:6px;box-shadow:var(--shadow-sm);
-  text-align:center;overflow:hidden;display:flex;flex-direction:column;height:100%;
-  transition:transform .25s, box-shadow .25s;
+
+.services-intro {
+  text-align: center;
+  margin-bottom: 2rem;
 }
-.service-card:hover{transform:scale(1.08);box-shadow:var(--shadow-md)}
-.service-card .image{width:100%;aspect-ratio:16/9;margin-bottom:1rem;overflow:hidden;border-radius:6px}
-.service-card .image img{width:100%;height:100%;object-fit:cover}
+
+.services-intro h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 6px;
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-md);
+}
+
+.service-card .image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.service-card .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 /* ----------------------------------------------------
-   CONTACT – call-to-action knop blok
+   CONTACTEER-ONS BUTTON ONDERAAN
 ---------------------------------------------------- */
-.Contacteer-ons{margin:2.5rem 0 3rem;text-align:center}
-.Contacteer-ons .btn{display:inline-block;margin:0 auto}
-
-/* ----------------------------------------------------
-   CONTACTPAGINA (paneelstijl met achtergrond)
----------------------------------------------------- */
-
-/* intro-tekst boven het paneel */
-.contactname{
-  text-align:center;
-  margin:2rem auto 1.5rem;
-  max-width:800px;
-  padding:0 1rem;
-}
-.contactname h1{font-size:2rem;margin-bottom:.5rem}
-.contactname p{font-size:1.1rem;color:#555}
-
-/* buitenpaneel */
-.contact-wrapper{
-  max-width:1200px;
-  margin:1rem auto 2rem;
-  padding:1.25rem;
-  background:
-    linear-gradient(to right, rgba(47,47,47,.80), rgba(47,47,47,.60)),
-    url('Images/houtskelet3.jpg') center/cover no-repeat;
-  border:1px solid #cfcdbd;
-  border-radius:6px;
-  box-shadow:var(--shadow-sm);
-  color:#fff;
+.Contacteer-ons {
+  margin: 3rem auto;
+  text-align: center;
 }
 
-/* grid: formulier links, kaart rechts */
-.contact-section{
-  display:grid;
-  grid-template-columns:1fr 340px;
-  gap:1.25rem;
+.Contacteer-ons .btn {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  background-color: rgba(44, 96, 23, 0.811);
+  color: #fff;
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.25s ease;
 }
 
-/* formulier */
-.contact-form{padding:1rem 1.25rem;border-radius:6px}
-h2.contacteer-ons{font-size:1.6rem;margin:0 0 .75rem}
-.contact-form label{display:block;font-weight:500;margin:.65rem 0 .35rem}
-.contact-form input,
-.contact-form textarea{
-  width:100%;padding:.85rem 1rem;background:#f9f9f6;color:var(--antraciet);
-  border:2px solid #cfcdbd;border-radius:6px;outline:none;
-  transition:border-color .2s, box-shadow .2s, background .2s;
+.Contacteer-ons .btn:hover {
+  background-color: #3c4b24;
 }
-.contact-form input:focus,
-.contact-form textarea:focus{
-  border-color:var(--olijfgroen);
-  box-shadow:0 0 0 3px rgba(81,99,46,.18);
-  background:#fff;
-}
-
-/* knop – GEEN vaste zijmarges meer! */
-.contact-form button{
-  margin-top:.9rem;
-  background:rgba(55,120,30,.811);
-  color:#fff;
-  padding:.85rem 2rem;
-  border:0;border-radius:6px;cursor:pointer;
-  font-weight:600;font-size:.95rem;
-  transition:background .25s,color .25s,transform .08s;
-  align-self:flex-start;
-}
-.contact-form button:hover{background:#fafaea;color:var(--antraciet)}
-.contact-form button:active{transform:translateY(1px)}
-
-/* contactkaart rechts */
-.contact-info{
-  background:#fff;color:var(--antraciet);
-  border:1px solid #eceadf;border-radius:6px;padding:1.7rem;
-  box-shadow:var(--shadow-sm);
-  margin:0;                      /* grid-gap verzorgt de ruimte */
-}
-.contact-info h2{
-  margin:0 0 .75rem;font-size:1.6rem;padding-bottom:.5rem;
-  border-bottom:3px solid rgba(81,99,46,.35);
-}
-.contact-info address{font-style:normal}
-.contact-info ul{list-style:none;padding:0;margin:0}
-.contact-info li{display:flex;align-items:flex-start;gap:.7rem;padding:.55rem 0}
-.contact-info .icon{color:var(--olijfgroen);font-size:1.15rem;line-height:1.2}
-.contact-info a{color:inherit;text-decoration:none}
-.contact-info a:hover{text-decoration:underline}
 
 /* ----------------------------------------------------
    FOOTER
 ---------------------------------------------------- */
 .site-footer{background:#2f2f2f;color:whitesmoke;font-size:.9rem;padding:2rem 1rem}
-.footer-container{
-  max-width:1400px;margin:0 auto;
-  display:grid;grid-template-columns:repeat(4,1fr);gap:3rem;text-align:left;
-}
+.footer-container{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:3rem;text-align:left;}
 .footer-column h4{font-size:1rem;text-transform:uppercase;margin-bottom:1rem;font-weight:600}
 .footer-logo{max-width:110px;margin-bottom:1rem}
 .footer-bottom{text-align:center;padding-top:.75rem}
@@ -277,91 +252,214 @@ h2.contacteer-ons{font-size:1.6rem;margin:0 0 .75rem}
 .site-footer li{margin:.25rem 0}
 
 /* ----------------------------------------------------
-   TABLET (768–1024)
+   CONTACTPAGINA
 ---------------------------------------------------- */
-@media (min-width:769px) and (max-width:1024px){
-  .intro-block .container,
-  .proces .container{grid-template-columns:minmax(260px,360px) minmax(0,1fr)}
+
+/* Titelblok boven het paneel */
+.contactname {
+  text-align: center;
+  margin: 2rem auto 1.5rem;
+  max-width: 800px;
+  padding: 0 1rem;
 }
 
+.contactname h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.contactname p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Buitenpaneel */
+.contact-wrapper {
+  max-width: 1200px;
+  margin: 1rem auto 2rem;
+  padding: 1.25rem;
+  background:
+    linear-gradient(to right, rgba(47,47,47,0.80), rgba(47,47,47,0.60)),
+    url('Images/houtskelet3.jpg') center/cover no-repeat;
+  border: 1px solid #cfcdbd;
+  border-radius: 6px;
+  box-shadow: var(--shadow-sm);
+  color: #fff;
+}
+
+/* Twee kolommen: formulier en kaart */
+.contact-section {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 1.25rem;
+}
+
+/* Contactformulier */
+.contact-form {
+  padding: 1rem 1.25rem;
+  border-radius: 6px;
+}
+
+.contact-form h2 {
+  font-size: 1.6rem;
+  margin: 0 0 0.75rem;
+}
+
+.contact-form label {
+  display: block;
+  font-weight: 500;
+  margin: 0.65rem 0 0.35rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background: #f9f9f6;
+  color: var(--antraciet);
+  border: 2px solid #cfcdbd;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--olijfgroen);
+  box-shadow: 0 0 0 3px rgba(81, 99, 46, 0.18);
+  background: #fff;
+}
+
+/* Verstuur-knop */
+.contact-form button {
+  margin-top: 0.9rem;
+  background: rgba(55, 120, 30, 0.811);
+  color: #fff;
+  padding: 0.85rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.25s, color 0.25s, transform 0.08s;
+  align-self: flex-start;
+}
+
+.contact-form button:hover {
+  background: #fafaea;
+  color: var(--antraciet);
+}
+
+.contact-form button:active {
+  transform: translateY(1px);
+}
+
+/* Contactgegevenskaart rechts */
+.contact-info {
+  background: #fff;
+  color: var(--antraciet);
+  border: 1px solid #eceadf;
+  border-radius: 6px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  margin: 6.2rem 0rem 5rem 0rem;
+  font-size: 0.95rem;
+}
+
+.contact-info h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 3px solid rgba(81, 99, 46, 0.35);
+}
+
+.contact-info address {
+  font-style: normal;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-info li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  padding: 0.5rem 0;
+}
+
+.contact-info .icon {
+  color: var(--olijfgroen);
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
+
+.contact-info a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+
 /* ----------------------------------------------------
-   MOBIEL (<=768px) – ENIGE mobiele blok
+   MEDIA QUERIES
 ---------------------------------------------------- */
 @media (max-width:768px){
-
-  /* header */
-  header{min-height:300px}
-  header .container{display:flex;justify-content:space-between;align-items:center;padding:.75rem 1rem;gap:.5rem}
-  .branding{display:flex;align-items:center;gap:.5rem;flex:1 1 auto}
-  .branding .logo{height:38px;width:auto}
-  .branding h1{font-size:1.25rem;line-height:1;margin:0}
-  .slogan{font-size:.9rem;line-height:1.05;margin:0}
-  .hamburger{
-    display:inline-flex;flex-direction:column;justify-content:center;align-items:center;
-    width:42px;height:42px;flex:0 0 auto;margin-left:.75rem;border:0;border-radius:8px;
-    background:rgba(47,47,47,.35);cursor:pointer
+  header .container {
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
   }
-  .hamburger-bar{width:22px;height:2px;background:#fafaea;margin:4px 0;border-radius:2px}
-  header nav ul{display:none !important}
-  #primary-nav{width:100%}
-  #primary-nav.open ul{
-    display:flex !important;flex-direction:column;gap:.5rem;margin-top:.75rem;
-    background:rgba(47,47,47,.75);padding:.75rem;border-radius:8px;text-align:center;width:100%
+
+  .hamburger {
+    display: block;
+    margin-left: auto;
+    z-index: 20;
   }
-  #primary-nav.open a{display:block;padding:.75rem 1rem;font-size:1.1rem}
 
-  /* hero compacter */
-  .hero{margin:.5rem auto;padding:.75rem 1rem}
-  .hero h1{font-size:1.4rem;margin-bottom:.5rem}
-  .hero p{font-size:.95rem;margin:.5rem auto}
-  .hero .btn{display:block;margin:.5rem auto;width:100%;max-width:300px;padding:.6rem 1rem}
+  #primary-nav {
+    display: none;
+    width: 100%;
+  }
 
-  /* intro & proces onder elkaar */
+  #primary-nav.open {
+    display: block;
+    background: rgba(47, 47, 47, 0.85);
+    padding: 1rem;
+    border-radius: 6px;
+  }
+
+  #primary-nav .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .footer-container{grid-template-columns:1fr;text-align:center;gap:1.5rem;}
+  .footer-logo{margin:0 auto 1rem}
+  .site-footer ul{list-style:none;padding:0;margin:0}
+  .site-footer li{margin:.25rem 0}
   .intro-block .container,
   .proces .container{grid-template-columns:1fr}
-  .intro-image, .intro-text, .proces-image, .proces-text{text-align:center}
-  .intro-image img, .proces-image img{margin:0 auto;width:min(250px,85vw)}
+  .intro-image img,
+  .proces-image img{margin:0 auto;width:min(250px,85vw)}
   .proces-image{justify-self:center}
-
-  /* CONTACT – voluit breedte */
-  .contactname{padding:.9rem 1rem}
-  .contactname h1{font-size:1.6rem}
-
-  .contact-wrapper{
-    margin:0 .75rem 1.25rem;
-    padding:.9rem;
-    border-radius:14px;
+  #primary-nav {display: none;}
+  #primary-nav.open {
+    display: block;
+    background: rgba(47, 47, 47, 0.85);
+    padding: 1rem;
+    border-radius: 6px;
   }
-
-  .contact-section{
-    grid-template-columns:1fr;     /* één kolom */
-    gap:.9rem;
-  }
-
-  .contact-form{padding:.75rem}
-  .contact-form input,
-  .contact-form textarea{padding:.8rem .9rem;max-width:100%}
-
-  /* knop midden en breed – dit is de fix */
-  .contact-form button{
-    width:100%;
-    max-width:320px;
-    margin:.75rem auto 0;          /* geen vaste zijmarges meer */
-    align-self:center;
-    padding:.75rem 1rem;
-  }
-
-  .contact-info{margin:0;padding:1rem}
-  .site-footer{padding:1.2rem .75rem;font-size:.8rem}
-  .footer-container{grid-template-columns:1fr;text-align:center;gap:1rem}
-  .footer-logo{max-width:80px;margin:0 auto .5rem}
-  .footer-column h4{font-size:.9rem;margin-bottom:.5rem}
-  .footer-column p,.footer-column li{margin:.25rem 0}
-  .footer-bottom{padding-top:.5rem}
 }
 
 @media (max-width: 768px) {
-  /* Titelblok compacter */
   .contactname {
     margin: 1rem 1rem 1.5rem;
     padding: 0;
@@ -377,7 +475,6 @@ h2.contacteer-ons{font-size:1.6rem;margin:0 0 .75rem}
     margin: 0 auto;
   }
 
-  /* Contact-wrapper iets strakker */
   .contact-wrapper {
     padding: 0.75rem;
     margin: 0 0.75rem 1.25rem;
@@ -385,12 +482,29 @@ h2.contacteer-ons{font-size:1.6rem;margin:0 0 .75rem}
     background-size: cover;
   }
 
-  /* Formulier */
+  .contact-section {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+
   .contact-form {
     padding: 0.75rem;
   }
 
-  /* Gegevenskaart compacter */
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.8rem 0.9rem;
+    max-width: 100%;
+  }
+
+  .contact-form button {
+    width: 100%;
+    max-width: 320px;
+    margin: 0.75rem auto 0;
+    align-self: center;
+    padding: 0.75rem 1rem;
+  }
+
   .contact-info {
     margin: 0;
     padding: 0.75rem 1rem;
