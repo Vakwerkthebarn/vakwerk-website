@@ -498,6 +498,15 @@ header .container {
 
 #primary-nav.open {
   display: block;
+  position: absolute;
+  top: 100%;
+  right: 1rem;           /* Afstand van de rechterkant */
+  width: 220px;          /* 👈 Kleiner menuveld dan nu */
+  background: rgba(47, 47, 47, 0.95);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 15;
 }
 
 #primary-nav .nav-links {
