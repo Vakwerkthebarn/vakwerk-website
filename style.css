@@ -495,7 +495,7 @@ header .container {
 }
 
 #primary-nav .nav-links a {
-  font-size: 1rem; /* of kleiner zoals 0.95rem of 0.9rem */
+  font-size: 0.8rem; /* of kleiner zoals 0.95rem of 0.9rem */
 }
    
   #primary-nav.open {
