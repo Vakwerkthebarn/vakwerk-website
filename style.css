@@ -528,3 +528,23 @@ header nav{margin-left:auto}
     font-size: 1rem;
   }
 }
+
+@media (max-width: 768px) {
+  .branding h1 {
+    font-size: 1.4rem;
+  }
+
+  .slogan {
+    font-size: 0.9rem;
+  }
+
+  .logo {
+    height: 45px;
+  }
+
+  header .container {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+}
+
