@@ -112,6 +112,25 @@ header nav{margin-left:auto}
   color:#fafaea;
 }
 
+.hamburger {
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 10;
+}
+
+.hamburger-bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
 /* ----------------------------------------------------
    HERO
 ---------------------------------------------------- */
@@ -414,6 +433,12 @@ header nav{margin-left:auto}
     flex-direction: row;
     align-items: center;
     gap: 1rem;
+  }
+
+    .hamburger {
+    display: flex;
+    align-self: flex-end;
+    margin-bottom: 1rem;
   }
 
   .branding {
