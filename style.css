@@ -513,7 +513,8 @@ header .container {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  align-items: flex-start;
+  align-items: center; /* <-- dit centreert de knoppen horizontaal */
+  text-align: center;  /* <-- dit centreert de tekst binnen de knoppen */
 }
 
 #primary-nav .nav-links a {
