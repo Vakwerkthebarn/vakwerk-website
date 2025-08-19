@@ -494,6 +494,10 @@ header .container {
   z-index: 15;
 }
 
+#primary-nav .nav-links a {
+  font-size: 1rem; /* of kleiner zoals 0.95rem of 0.9rem */
+}
+   
   #primary-nav.open {
   display: block;
 }
