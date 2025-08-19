@@ -433,11 +433,12 @@ header nav{margin-left:auto}
 ---------------------------------------------------- */
 @media (max-width:768px){
 header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: relative; /* Voor positionering van #primary-nav */
   flex-wrap: nowrap;
-  position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 .branding {
@@ -482,31 +483,31 @@ header .container {
   transition: all 0.3s ease-in-out;
 }
 
-  #primary-nav {
+#primary-nav {
+  display: none;
   position: absolute;
   top: 100%;
   right: 1rem;
-  left: 1rem;
+  width: calc(100% - 2rem);
   background: rgba(47, 47, 47, 0.95);
   padding: 1rem;
   border-radius: 6px;
-  display: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   z-index: 15;
 }
 
-#primary-nav .nav-links a {
-  font-size: 0.8rem; /* of kleiner zoals 0.95rem of 0.9rem */
-}
-   
-  #primary-nav.open {
+#primary-nav.open {
   display: block;
 }
 
 #primary-nav .nav-links {
-  display: flex;
   flex-direction: column;
   gap: 1rem;
-  width: 100%;
+  align-items: flex-start;
+}
+
+#primary-nav .nav-links a {
+  font-size: 0.8rem; /* of kleiner zoals 0.95rem of 0.9rem */
 }
 
   .hero .container {
