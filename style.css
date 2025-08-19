@@ -433,13 +433,22 @@ header nav{margin-left:auto}
     height: 35px;
   }
 
-  .hamburger {
-    display: block;
-    margin-left: auto;
-    order: 2;
-    z-index: 20;
-    align-self: flex-start;
-  }
+.hamburger {
+  display: block;
+  cursor: pointer;
+  background: none;
+  border: none;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 20;
+}
+
+.hamburger-bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+}
 
   #primary-nav {
     display: none;
