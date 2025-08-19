@@ -488,7 +488,7 @@ header .container {
   position: absolute;
   top: 100%;
   right: 1rem;
-  width: calc(100% - 2rem);
+  width: 260px;               /* → beperk de breedte van het menu */
   background: rgba(47, 47, 47, 0.95);
   padding: 1rem;
   border-radius: 6px;
@@ -501,13 +501,14 @@ header .container {
 }
 
 #primary-nav .nav-links {
+  display: flex;
   flex-direction: column;
   gap: 1rem;
   align-items: flex-start;
 }
 
 #primary-nav .nav-links a {
-  font-size: 0.8rem; /* of kleiner zoals 0.95rem of 0.9rem */
+  font-size: 0.9rem; /* of kleiner zoals 0.95rem of 0.9rem */
 }
 
   .hero .container {
