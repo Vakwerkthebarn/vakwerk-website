@@ -124,7 +124,7 @@ header nav{margin-left:auto}
 .hero p{margin:1rem auto;font-size:16px;color:#fff}
 .btn{
   display:inline-block;background:rgba(55, 120, 30, 0.811);color:#fff;
-  padding:.75rem 1.5rem;border-radius:var(--radius-sm);font-weight:500;
+  padding:.75rem 1.5rem;border-radius:6px;font-weight:500;
   transition:background .25s,color .25s,transform .08s;
 }
 .btn:hover{background:#fafaea;color:var(--antraciet);text-decoration:none}
@@ -426,7 +426,7 @@ h2.contacteer-ons {
   color: whitesmoke;
   padding: .85rem 4rem;
   border: 0;
-  border-radius: var(--radius-md);
+  border-radius: 6px;
   cursor: pointer;
   font-weight: 600;
   font-size: 0.9rem;
@@ -493,4 +493,44 @@ h2.contacteer-ons {
 
   .contact-form input,
   .contact-form textarea{ padding: .8rem .9rem; }
+}
+
+/* === CONTACT: full-width op mobiel === */
+@media (max-width: 768px) {
+  /* paneel mooi binnen de randen, geen horizontale scroll */
+  .contact-wrapper{
+    margin: 0 .75rem 1.25rem;
+    padding: .9rem;
+    border-radius: 14px;
+  }
+
+  /* één kolom, voluit */
+  .contact-section{
+    grid-template-columns: 1fr;
+    gap: .9rem;
+  }
+
+  /* formulier zelf 100% breed */
+  .contact-form{ padding: .75rem; }
+  .contact-form form{ width: 100%; }
+
+  /* velden staan al op width:100%; dit houdt ze binnen het scherm */
+  .contact-form input,
+  .contact-form textarea{
+    max-width: 100%;
+  }
+
+  /* VERSTUUR-knop: geen vaste zijmarges -> centraal + breed */
+  .contact-form button{
+    width: 100%;
+    max-width: 320px;
+    margin: .75rem auto 0;       /* i.p.v. 0.9rem 12rem */
+    padding: .75rem 1rem;
+  }
+
+  /* info-kaart onder het formulier, zonder extra buitenmarges */
+  .contact-info{
+    margin: 0;                   /* overrides de grote desktop-marge */
+    padding: 1rem;
+  }
 }
