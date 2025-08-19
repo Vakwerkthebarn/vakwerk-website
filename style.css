@@ -501,7 +501,7 @@ header .container {
   position: absolute;
   top: 100%;
   right: 1rem;           /* Afstand van de rechterkant */
-  width: 220px;          /* 👈 Kleiner menuveld dan nu */
+  width: 180px;          /* 👈 Kleiner menuveld dan nu */
   background: rgba(47, 47, 47, 0.95);
   padding: 1rem;
   border-radius: 10px;
@@ -527,11 +527,13 @@ header .container {
   gap: 1rem; /* ruimte tussen de knoppen */
   }
 
-  .hero .btn {
+.hero .btn {
+  display: block;
   width: 100%;
-  max-width: 260px;
+  max-width: 280px;
+  margin: 0.5rem auto;
   text-align: center;
-  }
+}
 
   .footer-container{
     grid-template-columns:1fr;
