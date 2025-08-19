@@ -62,15 +62,14 @@ header{
   box-shadow:0 4px 8px rgba(0,0,0,.1);
 }
 header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-  padding: 1rem 2rem;
-  max-width: 100%;
-  margin: 0 auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:2rem;
+  padding:1rem 2rem;
+  max-width:100%;
+  margin:0 auto;
 }
-
 .branding{display:flex;align-items:center;gap:1rem}
 .branding h1{
   font-size:2rem;line-height:1;margin:0;color:#f0f0ed;
@@ -123,7 +122,7 @@ header nav{margin-left:auto}
 .hero h1{font-size:2rem;color:var(--antraciet)}
 .hero p{margin:1rem auto;font-size:16px;color:#fff}
 .btn{
-  display:inline-block;background:rgba(55, 120, 30, 0.811);color:#fff;
+  display:inline-block;background:rgba(55,120,30,.811);color:#fff;
   padding:.75rem 1.5rem;border-radius:6px;font-weight:500;
   transition:background .25s,color .25s,transform .08s;
 }
@@ -133,16 +132,9 @@ header nav{margin-left:auto}
 /* ----------------------------------------------------
    INTRO
 ---------------------------------------------------- */
-.intro-block{
-  max-width:1200px;
-  margin:3rem auto;
-  padding:0 1rem
-}
+.intro-block{max-width:1200px;margin:3rem auto;padding:0 1rem}
 .intro-block .container{
-  display:grid;
-  grid-template-columns: 250px 1fr;
-  gap:2rem;
-  align-items:center;
+  display:grid;grid-template-columns:250px 1fr;gap:2rem;align-items:center;
 }
 .intro-text{text-align:left;margin:0}
 .intro-text h2{font-size:2rem;line-height:1.1;margin:0 0 1.5rem}
@@ -150,16 +142,9 @@ header nav{margin-left:auto}
 /* ----------------------------------------------------
    PROCES
 ---------------------------------------------------- */
-.proces{
-  max-width: 1200px;
-  margin: 3rem auto;
-  padding: 0 1rem;
-}
-.proces .container {
-  display: grid;
-  grid-template-columns: 1fr 250px;
-  gap: 2rem;
-  align-items: center;
+.proces{max-width:1200px;margin:3rem auto;padding:0 1rem}
+.proces .container{
+  display:grid;grid-template-columns:1fr 250px;gap:2rem;align-items:center;
 }
 .proces-text{text-align:left;margin:0;display:flex;flex-direction:column;justify-content:center}
 .proces-text .section-title{font-size:2rem;line-height:1.1;margin:0 0 1.5rem}
@@ -186,97 +171,94 @@ header nav{margin-left:auto}
 .service-card .image img{width:100%;height:100%;object-fit:cover}
 
 /* ----------------------------------------------------
-   CONTACT
+   CONTACT – call-to-action knop blok
 ---------------------------------------------------- */
 .Contacteer-ons{margin:2.5rem 0 3rem;text-align:center}
 .Contacteer-ons .btn{display:inline-block;margin:0 auto}
 
 /* ----------------------------------------------------
-   CONTACT PAGE
+   CONTACTPAGINA (paneelstijl met achtergrond)
 ---------------------------------------------------- */
-.contactname {
-  text-align: center;
-  margin: 2rem auto 3rem;
-  max-width: 800px;
-  padding: 0 1rem;
+
+/* intro-tekst boven het paneel */
+.contactname{
+  text-align:center;
+  margin:2rem auto 1.5rem;
+  max-width:800px;
+  padding:0 1rem;
 }
-.contactname h1 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-.contactname p {
-  font-size: 1.1rem;
-  color: #555;
+.contactname h1{font-size:2rem;margin-bottom:.5rem}
+.contactname p{font-size:1.1rem;color:#555}
+
+/* buitenpaneel */
+.contact-wrapper{
+  max-width:1200px;
+  margin:1rem auto 2rem;
+  padding:1.25rem;
+  background:
+    linear-gradient(to right, rgba(47,47,47,.80), rgba(47,47,47,.60)),
+    url('Images/houtskelet3.jpg') center/cover no-repeat;
+  border:1px solid #cfcdbd;
+  border-radius:6px;
+  box-shadow:var(--shadow-sm);
+  color:#fff;
 }
 
-.contact-wrapper {
-  max-width: 1200px;
-  margin: 0 auto 3rem;
-  padding: 0 1rem;
-}
-.contact-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
+/* grid: formulier links, kaart rechts */
+.contact-section{
+  display:grid;
+  grid-template-columns:1fr 340px;
+  gap:1.25rem;
 }
 
-.contact-form form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-.contact-form label {
-  font-weight: 500;
-}
+/* formulier */
+.contact-form{padding:1rem 1.25rem;border-radius:6px}
+h2.contacteer-ons{font-size:1.6rem;margin:0 0 .75rem}
+.contact-form label{display:block;font-weight:500;margin:.65rem 0 .35rem}
 .contact-form input,
-.contact-form textarea {
-  padding: 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: var(--radius-sm);
-  font-size: 1rem;
-  width: 100%;
+.contact-form textarea{
+  width:100%;padding:.85rem 1rem;background:#f9f9f6;color:var(--antraciet);
+  border:2px solid #cfcdbd;border-radius:6px;outline:none;
+  transition:border-color .2s, box-shadow .2s, background .2s;
 }
-.contact-form button {
-  background: var(--antraciet);
-  color: #fff;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--radius-sm);
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.25s;
-}
-.contact-form button:hover {
-  background: #444;
+.contact-form input:focus,
+.contact-form textarea:focus{
+  border-color:var(--olijfgroen);
+  box-shadow:0 0 0 3px rgba(81,99,46,.18);
+  background:#fff;
 }
 
-.contact-info ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+/* knop – GEEN vaste zijmarges meer! */
+.contact-form button{
+  margin-top:.9rem;
+  background:rgba(55,120,30,.811);
+  color:#fff;
+  padding:.85rem 2rem;
+  border:0;border-radius:6px;cursor:pointer;
+  font-weight:600;font-size:.95rem;
+  transition:background .25s,color .25s,transform .08s;
+  align-self:flex-start;
 }
-.contact-info li {
-  margin-bottom: 0.75rem;
-  font-size: 1rem;
-}
-.contact-info a {
-  color: inherit;
-  text-decoration: none;
-}
-.contact-info a:hover {
-  text-decoration: underline;
-}
+.contact-form button:hover{background:#fafaea;color:var(--antraciet)}
+.contact-form button:active{transform:translateY(1px)}
 
-/* Mobile: stack form en info onder elkaar */
-@media (max-width: 768px) {
-  .contact-section {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  .contactname h1 {
-    font-size: 1.5rem;
-  }
+/* contactkaart rechts */
+.contact-info{
+  background:#fff;color:var(--antraciet);
+  border:1px solid #eceadf;border-radius:6px;padding:1.7rem;
+  box-shadow:var(--shadow-sm);
+  margin:0;                      /* grid-gap verzorgt de ruimte */
 }
+.contact-info h2{
+  margin:0 0 .75rem;font-size:1.6rem;padding-bottom:.5rem;
+  border-bottom:3px solid rgba(81,99,46,.35);
+}
+.contact-info address{font-style:normal}
+.contact-info ul{list-style:none;padding:0;margin:0}
+.contact-info li{display:flex;align-items:flex-start;gap:.7rem;padding:.55rem 0}
+.contact-info .icon{color:var(--olijfgroen);font-size:1.15rem;line-height:1.2}
+.contact-info a{color:inherit;text-decoration:none}
+.contact-info a:hover{text-decoration:underline}
 
 /* ----------------------------------------------------
    FOOTER
@@ -291,26 +273,19 @@ header nav{margin-left:auto}
 .footer-bottom{text-align:center;padding-top:.75rem}
 .footer-bottom a{color:whitesmoke;margin:0 .5rem}
 .footer-bottom a:hover{opacity:.7;color:blue}
-
-.site-footer ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.site-footer li {
-  margin: .25rem 0;
-}
+.site-footer ul{list-style:none;padding:0;margin:0}
+.site-footer li{margin:.25rem 0}
 
 /* ----------------------------------------------------
-   TABLET
+   TABLET (768–1024)
 ---------------------------------------------------- */
 @media (min-width:769px) and (max-width:1024px){
   .intro-block .container,
-  .proces .container{grid-template-columns:minmax(260px,360px) minmax(0,1fr);}
+  .proces .container{grid-template-columns:minmax(260px,360px) minmax(0,1fr)}
 }
 
 /* ----------------------------------------------------
-   MOBIEL (<=768px)
+   MOBIEL (<=768px) – ENIGE mobiele blok
 ---------------------------------------------------- */
 @media (max-width:768px){
 
@@ -321,11 +296,18 @@ header nav{margin-left:auto}
   .branding .logo{height:38px;width:auto}
   .branding h1{font-size:1.25rem;line-height:1;margin:0}
   .slogan{font-size:.9rem;line-height:1.05;margin:0}
-  .hamburger{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;width:42px;height:42px;flex:0 0 auto;margin-left:.75rem;border:0;border-radius:8px;background:rgba(47,47,47,.35);cursor:pointer}
+  .hamburger{
+    display:inline-flex;flex-direction:column;justify-content:center;align-items:center;
+    width:42px;height:42px;flex:0 0 auto;margin-left:.75rem;border:0;border-radius:8px;
+    background:rgba(47,47,47,.35);cursor:pointer
+  }
   .hamburger-bar{width:22px;height:2px;background:#fafaea;margin:4px 0;border-radius:2px}
   header nav ul{display:none !important}
   #primary-nav{width:100%}
-  #primary-nav.open ul{display:flex !important;flex-direction:column;gap:.5rem;margin-top:.75rem;background:rgba(47,47,47,.75);padding:.75rem;border-radius:8px;text-align:center;width:100%}
+  #primary-nav.open ul{
+    display:flex !important;flex-direction:column;gap:.5rem;margin-top:.75rem;
+    background:rgba(47,47,47,.75);padding:.75rem;border-radius:8px;text-align:center;width:100%
+  }
   #primary-nav.open a{display:block;padding:.75rem 1rem;font-size:1.1rem}
 
   /* hero compacter */
@@ -339,198 +321,41 @@ header nav{margin-left:auto}
   .proces .container{grid-template-columns:1fr}
   .intro-image, .intro-text, .proces-image, .proces-text{text-align:center}
   .intro-image img, .proces-image img{margin:0 auto;width:min(250px,85vw)}
-  .proces-image{justify-self:center} /* fix foto centreren */
+  .proces-image{justify-self:center}
 
-  /* footer compacter */
+  /* CONTACT – voluit breedte */
+  .contactname{padding:.9rem 1rem}
+  .contactname h1{font-size:1.6rem}
+
+  .contact-wrapper{
+    margin:0 .75rem 1.25rem;
+    padding:.9rem;
+    border-radius:14px;
+  }
+
+  .contact-section{
+    grid-template-columns:1fr;     /* één kolom */
+    gap:.9rem;
+  }
+
+  .contact-form{padding:.75rem}
+  .contact-form input,
+  .contact-form textarea{padding:.8rem .9rem;max-width:100%}
+
+  /* knop midden en breed – dit is de fix */
+  .contact-form button{
+    width:100%;
+    max-width:320px;
+    margin:.75rem auto 0;          /* geen vaste zijmarges meer */
+    align-self:center;
+    padding:.75rem 1rem;
+  }
+
+  .contact-info{margin:0;padding:1rem}
   .site-footer{padding:1.2rem .75rem;font-size:.8rem}
   .footer-container{grid-template-columns:1fr;text-align:center;gap:1rem}
   .footer-logo{max-width:80px;margin:0 auto .5rem}
   .footer-column h4{font-size:.9rem;margin-bottom:.5rem}
   .footer-column p,.footer-column li{margin:.25rem 0}
   .footer-bottom{padding-top:.5rem}
-}
-
-/* ============ CONTACTPAGINA – paneelstijl zoals screenshot ============ */
-
-.contactname {
-  padding: 1rem 0rem 0rem 0rem;
-}
-
-h2.contacteer-ons {
-  font-size: 2rem;
-}
-
-/* Buitenpaneel (antraciet) met afgeronde hoeken */
-.contact-wrapper{
-  max-width: 1200px;
-  margin: 1rem auto 2rem;
-  padding: 1.25rem;
-
-  /* achtergrond met overlay */
-  background:
-    linear-gradient(to right, rgba(47, 47, 47, 0.796), rgba(47, 47, 47, 0.599)),
-    url('Images/houtskelet3.jpg') center/cover no-repeat;
-
-  border: 1px solid #cfcdbd;
-  border-radius: 6px;
-  box-shadow: var(--shadow-sm);
-  color: #fff; /* tekst wit op donkere overlay */
-}
-
-
-/* Twee kolommen: formulier links, infokaart rechts */
-.contact-section{
-  display: grid;
-  grid-template-columns: 1fr 340px;
-  gap: 1.25rem;
-}
-
-/* Formulier */
-.contact-form{
-  padding: 1rem 1.25rem;
-  border-radius: 6px;
-}
-.contact-form h2{
-  margin: 0 0 .75rem;
-  font-size: 1.6rem;
-}
-.contact-form label{
-  display: block;
-  font-weight: 500;
-  margin: .65rem 0 .35rem;
-}
-.contact-form input,
-.contact-form textarea{
-  width: 100%;
-  padding: .85rem 1rem;
-  background: #f9f9f6;
-  color: var(--antraciet);
-  border: 2px solid #cfcdbd;
-  border-radius: 6px;
-  outline: none;
-  transition: border-color .2s, box-shadow .2s, background .2s;
-}
-.contact-form input:focus,
-.contact-form textarea:focus{
-  border-color: var(--olijfgroen);
-  box-shadow: 0 0 0 3px rgba(81,99,46,.18);
-  background: #fff;
-}
-
-/* Verstuurknop in jouw knoppenstijl */
-.contact-form button{
-  margin-top: .9rem;
-  margin: 0.9rem 16rem;
-  background: rgba(55, 120, 30, 0.811);
-  align-items: center;
-  color: whitesmoke;
-  padding: .85rem 4rem;
-  border: 0;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: background .25s, color .25s, transform .08s;
-}
-.contact-form button:hover{ background:#fafaea; color:var(--antraciet); }
-.contact-form button:active{ transform: translateY(1px); }
-
-/* Rechter “kaartje” met contactgegevens */
-.contact-info{
-  background: #fff;
-  color: var(--antraciet);
-  border: 1px solid #eceadf;
-  border-radius: 6px;
-  padding: 1.7rem 1.7rem;
-  box-shadow: var(--shadow-sm);
-  margin: 7.9rem 2rem 5.7rem 0rem;
-}
-.contact-info h2{
-  margin: 0 0 .75rem;
-  font-size: 1.6rem;
-  padding-bottom: .5rem;
-  border-bottom: 3px solid rgba(81,99,46,.35);
-}
-.contact-info address{ font-style: normal; }
-.contact-info ul{
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.contact-info li{
-  display: flex;
-  align-items: flex-start;
-  gap: .7rem;
-  padding: .55rem 0;
-}
-.contact-info .icon{
-  color: var(--olijfgroen);
-  font-size: 1.15rem;
-  line-height: 1.2;
-}
-.contact-info a{ color: inherit; text-decoration: none; }
-.contact-info a:hover{ text-decoration: underline; }
-
-/* ---------- Mobiel ---------- */
-@media (max-width: 768px){
-  .contactname{ padding: .9rem 1rem; }
-  .contactname h1{ font-size: 1.6rem; }
-
-  .contact-wrapper{
-    padding: .9rem .9rem 1rem;
-    border-radius: 14px;
-  }
-
-  .contact-section{
-    grid-template-columns: 1fr;   /* onder elkaar */
-    gap: .9rem;
-  }
-
-  .contact-info{ margin-top: .25rem; }
-
-  .contact-form h2{ font-size: 1.35rem; }
-  .contact-info h2{ font-size: 1.25rem; }
-
-  .contact-form input,
-  .contact-form textarea{ padding: .8rem .9rem; }
-}
-
-/* === CONTACT: full-width op mobiel === */
-@media (max-width: 768px) {
-  /* paneel mooi binnen de randen, geen horizontale scroll */
-  .contact-wrapper{
-    margin: 0 .75rem 1.25rem;
-    padding: .9rem;
-    border-radius: 14px;
-  }
-
-  /* één kolom, voluit */
-  .contact-section{
-    grid-template-columns: 1fr;
-    gap: .9rem;
-  }
-
-  /* formulier zelf 100% breed */
-  .contact-form{ padding: .75rem; }
-  .contact-form form{ width: 100%; }
-
-  /* velden staan al op width:100%; dit houdt ze binnen het scherm */
-  .contact-form input,
-  .contact-form textarea{
-    max-width: 100%;
-  }
-
-  /* VERSTUUR-knop: geen vaste zijmarges -> centraal + breed */
-  .contact-form button{
-    width: 100%;
-    max-width: 320px;
-    margin: .75rem auto 0;       /* i.p.v. 0.9rem 12rem */
-    padding: .75rem 1rem;
-  }
-
-  /* info-kaart onder het formulier, zonder extra buitenmarges */
-  .contact-info{
-    margin: 0;                   /* overrides de grote desktop-marge */
-    padding: 1rem;
-  }
 }
