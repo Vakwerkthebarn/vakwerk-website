@@ -131,6 +131,10 @@ header nav{margin-left:auto}
   transition: all 0.3s ease-in-out;
 }
 
+.hamburger {
+  display: none; /* desktop: verbergen */
+}
+
 /* ----------------------------------------------------
    HERO
 ---------------------------------------------------- */
@@ -429,15 +433,20 @@ header nav{margin-left:auto}
 ---------------------------------------------------- */
 @media (max-width:768px){
   header .container {
-    flex-wrap: wrap;
-    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+    flex-wrap: nowrap;
     gap: 1rem;
   }
 
   .branding {
-    flex: 1;
-    order: 1;
+    display: flex;
+    align-items: center;
+    flex-shrink: 1;
+    min-width: 0;
+    text-align: left;
+    max-width: 80%; /* optioneel als nodig */
   }
 
   .branding h1 {
@@ -452,19 +461,17 @@ header nav{margin-left:auto}
     height: 35px;
   }
 
-.hamburger {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-self: flex-end;
-  gap: 4px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-  z-index: 20;
-}
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 10;
+  }
 
   #primary-nav {
     display: none;
