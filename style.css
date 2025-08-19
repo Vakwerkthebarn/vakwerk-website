@@ -123,7 +123,7 @@ header nav{margin-left:auto}
 .hero h1{font-size:2rem;color:var(--antraciet)}
 .hero p{margin:1rem auto;font-size:16px;color:#fff}
 .btn{
-  display:inline-block;background:var(--antraciet);color:#fff;
+  display:inline-block;background:rgba(55, 120, 30, 0.811);color:#fff;
   padding:.75rem 1.5rem;border-radius:var(--radius-sm);font-weight:500;
   transition:background .25s,color .25s,transform .08s;
 }
@@ -356,7 +356,7 @@ header nav{margin-left:auto}
   padding: 1rem 0rem 0rem 0rem;
 }
 
-.contacteer-ons h2 {
+h2.contacteer-ons {
   font-size: 2rem;
 }
 
@@ -420,10 +420,10 @@ header nav{margin-left:auto}
 /* Verstuurknop in jouw knoppenstijl */
 .contact-form button{
   margin-top: .9rem;
-  margin: 0.9rem 12rem;
-  background: rgba(203, 185, 164, 0.863);
+  margin: 0.9rem 16rem;
+  background: rgba(55, 120, 30, 0.811);
   align-items: center;
-  color: var(--antraciet);
+  color: whitesmoke;
   padding: .85rem 4rem;
   border: 0;
   border-radius: var(--radius-md);
