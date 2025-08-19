@@ -435,12 +435,6 @@ header nav{margin-left:auto}
     gap: 1rem;
   }
 
-    .hamburger {
-    display: flex;
-    align-self: flex-end;
-    margin-bottom: 1rem;
-  }
-
   .branding {
     flex: 1;
     order: 1;
@@ -459,20 +453,17 @@ header nav{margin-left:auto}
   }
 
 .hamburger {
-  display: block;
-  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: flex-end;
+  gap: 4px;
   background: none;
   border: none;
-  flex-direction: column;
-  gap: 4px;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
   z-index: 20;
-}
-
-.hamburger-bar {
-  width: 25px;
-  height: 3px;
-  background-color: #fff;
-  border-radius: 2px;
 }
 
   #primary-nav {
@@ -492,13 +483,15 @@ header nav{margin-left:auto}
     flex-direction: column;
     gap: 1rem;
     width: 100%;
+    display: flex;
   }
 
   .hero .btn {
   display: block;
-  margin: 0.5rem auto;
+  margin: auto;
   width: max-content;
   text-align: center;
+  margin-top: 0.75rem;
   }
 
   .footer-container{
