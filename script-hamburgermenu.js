@@ -1,14 +1,19 @@
-// Hamburger-menu functionaliteit
-document.addEventListener("DOMContentLoaded", function () {
-  const hamburger = document.querySelector(".hamburger");
-  const nav = document.getElementById("primary-nav");
+// script-hamburgermenu.js
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.querySelector('.hamburger');
+  const nav = document.getElementById('primary-nav');
+  if (!btn || !nav) return;
 
-  if (hamburger && nav) {
-    hamburger.addEventListener("click", function () {
-      nav.classList.toggle("open");
+  btn.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
 
-      const expanded = this.getAttribute("aria-expanded") === "true" || false;
-      this.setAttribute("aria-expanded", !expanded);
-    });
-  }
+  // optioneel: klik buiten menu sluit het weer
+  document.addEventListener('click', (e) => {
+    if (!nav.classList.contains('open')) return;
+    if (e.target.closest('#primary-nav') || e.target.closest('.hamburger')) return;
+    nav.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+  });
 });
