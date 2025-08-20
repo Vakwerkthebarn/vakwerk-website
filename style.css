@@ -891,11 +891,20 @@ body { font-size: clamp(0.95rem, 1.2vw, 1rem); }
     flex-direction: column;
     gap: .6rem;
   }
-  body.home-page header .hero-buttons .btn {
+  body.home-page header .btn {
     width: 100%;
     max-width: 320px;
     padding: .7rem 1rem;
     font-size: .95rem;
     margin: 0 auto;
   }
+
+   .hero-buttons {
+    width: 100%;
+    max-width: 320px;
+    padding: .7rem 1rem;
+    font-size: .85rem;
+    margin: 0 auto;
+  }
+
 }
