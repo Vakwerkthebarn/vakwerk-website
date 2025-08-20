@@ -169,14 +169,17 @@ header nav{ margin-left:auto; }
 /* ----------------------------------------------------
    HERO (in header)
 ---------------------------------------------------- */
-.hero-content {
+body.home-page header { position: relative; }
+
+body.home-page header .hero-content {
   position: absolute;
-  bottom: 1.5rem;          /* onderaan header */
+  bottom: 1.5rem;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
   width: 100%;
   padding: 0 1rem;
+  z-index: 1;
 }
 
 .hero {
