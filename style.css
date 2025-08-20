@@ -183,7 +183,7 @@ body.home-page header .hero-content {
 }
 
 .hero {
-  background: rgba(0, 0, 0, 0.6);  /* donkerdere overlay */
+  background: rgba(0, 0, 0, 0.268);  /* donkerdere overlay */
   display: inline-block;           /* compact rond content */
   padding: 1rem 2rem;
   border-radius: 6px;
