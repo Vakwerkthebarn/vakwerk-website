@@ -12,24 +12,31 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Jouw eigen stylesheet -->
-  <link rel="stylesheet" href="style.css?v=20250818-1.2" />
+  <link rel="stylesheet" href="style.css?v=20250818-2.1" />
 </head>
+
+<!-- Body -->
 <body class="home-page">
 
+<!-- Banner -->
 <header>
-  <div class="container">
+  <div class="container topbar">
     <div class="branding">
-      <img src="Images/logo(2).png" alt="Logo" class="logo">
+      <img src="images/logo(2).png" alt="Logo" class="logo">
       <div>
         <h1>VAKWERK THE BARN</h1>
         <p class="slogan">HOUT. STIJL. VAKMANSCHAP.</p>
       </div>
     </div>
+
+    <!-- Hamburger menu -->
     <button class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">
       <span class="hamburger-bar"></span>
       <span class="hamburger-bar"></span>
       <span class="hamburger-bar"></span>
     </button>
+
+    <!-- Navigatie -->
     <nav id="primary-nav">
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -38,8 +45,24 @@
       </ul>
     </nav>
   </div>
+
+  <!-- Hero sectie -->
+  <div class="hero-content">
+    <div class="hero">
+    <h1>"Exclusief vakwerk voor buitenleven en interieur op maat"</h1>
+    <p>
+      Op zoek naar een stijlvolle poolhouse, een functioneel tuinkantoor, een overkapping, carport of houtwerk op maat?<br>
+      Met de focus op kwalitatieve materialen en de juiste constructietechnieken maken we zowel klassieke, landelijke als moderne realisaties die tijdloze schoonheid uitstralen.
+    </p>
+    <div class="hero-buttons">
+      <a href="realisaties-overzicht.html" class="btn">Bekijk realisaties</a>
+      <a href="contact.html" class="btn">Vraag uw offerte aan</a>
+    </div>
+    </div>
+  </div>
 </header>
 
+<!-- Hero
 <main>
   <section class="hero">
     <div class="container">
@@ -54,11 +77,13 @@
       </div>
     </div>
   </section>
+-->
 
+  <!-- Intro -->
   <section class="intro-block">
     <div class="container">
       <div class="intro-image">
-        <img src="Images/Tom1.jpg" alt="zaakvoerder1">
+        <img src="images/Tom2.jpg" alt="zaakvoerder">
       </div>
       <div class="intro-text">
         <h2>"Passie voor hout en oog voor detail"</h2>
@@ -77,6 +102,7 @@
     </div>
   </section>
 
+  <!-- Proces -->
   <section class="proces-section">
     <div class="proces">
       <div class="container">
@@ -92,59 +118,63 @@
           </p>
           <br>
           <p>
-            Tijdens de uitvoering blijven we nauw betrokken. U wordt op de hoogte gehouden van de voortgang en belangrijke keuzes nemen we samen. U krijgt een vast aanspreekpunt voor de begeleiding van de eerste schets tot de laatste afwerking. Zo garanderen we niet alleen een resultaat dat kwaliteit uitstraalt, maar ook een samenwerking die prettig en persoonlijk verloopt.
+            Tijdens de uitvoering blijven we nauw betrokken. U wordt op de hoogte gehouden van de voortgang én belangrijke keuzes nemen we samen. U krijgt een vast aanspreekpunt voor de begeleiding vanaf de eerste schets tot de laatste afwerking. Zo garanderen we niet alleen een resultaat dat kwaliteit uitstraalt, maar ook een samenwerking die prettig en persoonlijk verloopt.
           </p>
         </div>
         <div class="proces-image">
-          <img src="Images/Tom2.jpg" alt="zaakvoerder2">
+          <img src="images/Tom2.jpg" alt="zaakvoerder2">
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Services/Realisaties -->
   <section class="services-section">
     <div class="services-intro">
       <h2>Ontdek onze realisaties</h2>
     </div>
 
     <div class="services-grid">
-      <a href="realisaties-overzicht.html" class="service-card">
-        <div class="image"><img src="Images/poolhouse1.jpg" alt=""></div>
-        <h3>Poolhouses</h3>
-        <p>Luxueuze poolhouses in harmonie met uw tuin.</p>
+      <a href="realisaties-overzicht.html" class="service-card" aria-label="Bekijk onze poolhouses &amp; Bijgebouwen">
+        <div class="image">
+          <img src="images/tuinkantoor2.jpg" alt="Poolhouses &amp; Bijgebouwen" loading="lazy" width="640" height="360">
+        </div>
+        <h3>Poolhouses &amp; Bijgebouwen</h3>
+        <p>Luxueuze poolhouses en bijgebouwen in harmonie met uw tuin</p>
       </a>
 
-      <a href="realisaties-overzicht.html" class="service-card">
-        <div class="image"><img src="Images/tuinkantoor1.jpg" alt=""></div>
-        <h3>Bijgebouwen</h3>
-        <p>Omschrijving nog toevoegen</p>
+      <a href="realisaties-overzicht.html" class="service-card" aria-label="Bekijk onze Overkappingen &amp; Carports">
+        <div class="image">
+          <img src="images/overkapping4.jpg" alt="Overkappingen &amp; Carports" loading="lazy" width="640" height="360">
+        </div>
+        <h3>Overkappingen &amp; Carports</h3>
+        <p>Beschut genieten in elk seizoen</p>
       </a>
 
-      <a href="realisaties-overzicht.html" class="service-card">
-        <div class="image"><img src="Images/overkapping4.jpg" alt=""></div>
-        <h3>Overkappingen &amp; carports</h3>
-        <p>Beschut genieten in elk seizoen.</p>
-      </a>
-
-      <a href="realisaties-overzicht.html" class="service-card">
-        <div class="image"><img src="Images/interieur6.jpg" alt=""></div>
+      <a href="realisaties-overzicht.html" class="service-card" aria-label="Bekijk ons houtwerk op maat">
+        <div class="image">
+          <img src="images/interieur6.jpg" alt="Houtwerk op maat" loading="lazy" width="640" height="360">
+        </div>
         <h3>Houtwerk op maat</h3>
         <p>Interieur en exterieur, nieuwe creaties &amp; restauraties.</p>
       </a>
     </div>
   </section>
 
+  <!-- Contactknop -->
   <section class="Contacteer-ons">
     <div class="container center mt-2">
       <a href="contact.html" class="btn">Contacteer ons</a>
     </div>
   </section>
+
 </main>
 
+<!-- Footer -->
 <footer class="site-footer">
   <div class="footer-container">
     <div class="footer-column">
-      <img src="Images/logo.png" alt="Vakwerk The Barn" class="footer-logo">
+      <img src="images/logo.png" alt="Vakwerk The Barn" class="footer-logo">
     </div>
 
     <div class="footer-column">
@@ -184,7 +214,12 @@
   </div>
 </footer>
 
-<!-- Externe JS -->
+<!-- Externe JS Hamburgermenu -->
+<script src="script-hamburgermenu.js"></script>
+
+<!-- Externe JS Carrousel-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"/>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
 <script src="script.js"></script>
 
 </body>
