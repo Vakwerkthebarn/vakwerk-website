@@ -653,6 +653,25 @@ body { font-size: clamp(0.95rem, 1.2vw, 1rem); }
   text-align: center;
 }
 
+  body.home-page header .hero-content h1 {
+    font-size: 1.5rem;      /* kleiner dan desktop */
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  body.home-page header .hero-content p {
+    font-size: 0.95rem;     /* tekst iets kleiner */
+    line-height: 1.4;
+    max-width: 90%;
+    margin: 0 auto 1rem;
+  }
+
+  body.home-page header .hero-content .btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    margin: 0.25rem;
+  }
+
 /* Inhoud Index-pagina */
 .intro-text,
 .proces-text,
