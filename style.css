@@ -852,3 +852,47 @@ body { font-size: clamp(0.95rem, 1.2vw, 1rem); }
     box-shadow: var(--shadow-sm);
   }
 }
+
+
+/* Hero compacter op mobiel */
+@media (max-width: 768px) {
+  body.home-page header .hero-content {
+    bottom: .75rem;
+    max-width: 95%;
+    padding: 0 .75rem;
+  }
+
+  /* Als je een .hero wrapper hebt rond de tekst, maak die ook compacter */
+  body.home-page header .hero {
+    max-width: 95%;
+    padding: .9rem 1rem;
+    border-radius: 8px;
+  }
+
+  /* OVERRIDE de desktop clamp-groottes */
+  body.home-page header .hero-content h1 {
+    font-size: 1.6rem !important;   /* forceer kleiner op mobiel */
+    line-height: 1.2;
+    margin-bottom: .5rem;
+  }
+
+  body.home-page header .hero-content p {
+    font-size: .95rem !important;
+    line-height: 1.45;
+    max-width: 90%;
+    margin: 0 auto 1rem;
+  }
+
+  /* knoppen compacter en onder elkaar */
+  body.home-page header .hero-buttons {
+    flex-direction: column;
+    gap: .6rem;
+  }
+  body.home-page header .hero-buttons .btn {
+    width: 100%;
+    max-width: 320px;
+    padding: .7rem 1rem;
+    font-size: .95rem;
+    margin: 0 auto;
+  }
+}
