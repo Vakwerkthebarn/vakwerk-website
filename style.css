@@ -26,17 +26,16 @@ html{
   scroll-behavior:smooth;
   height:100%;
   max-width:100%;
-  overflow-x:hidden
+  overflow-x:hidden;
 }
 
 body{
   font-family:'Roboto',sans-serif;
-  font-size: clamp(0.95rem, 1vw, 1rem); /* 15px op mobiel, 16px op desktop */
+  font-size: clamp(0.95rem, 1vw, 1rem);
   background:rgba(243,241,241,.903);
   color:var(--antraciet);
   line-height:1.6;
   height:100%;
-  margin: 0;
   display:flex;
   flex-direction:column;
   max-width:100%;
@@ -45,308 +44,266 @@ body{
 
 main{flex:1}
 
-a{
-  color:inherit;
-  text-decoration:none
-}
-
+a{color:inherit;text-decoration:none}
 a:hover{text-decoration:underline}
 
 h1,h2,h3,h4,h5{
-  font-family:'Bebas Neue',sans-serif;
+  font-family: 'Bebas Neue','Oswald',sans-serif;
   letter-spacing:1px;
-  font-family: 'Bebas Neue', 'Oswald', sans-serif;
-  font-weight: 700;
-  line-height: 1.2;
-  margin: 0 0 0.75em; /* ruimte onder elke titel */
-  color: #111; /* iets donkerder dan body */
+  font-weight:700;
+  line-height:1.2;
+  margin:0 0 .75em;
+  color:#111;
 }
-
-h1 {
-  font-size: clamp(2.25rem, 5vw, 3rem); /* 36px → 48px */
-}
-
-h2 {
-  font-size: clamp(1.5rem, 3.5vw, 2rem); /* 24px → 32px */
-}
-
-h3 {
-  font-size: clamp(1.25rem, 2.5vw, 1.5rem); /* 20px → 24px */
-}
-
-/* Optioneel: kleine tekst (bv. footer, disclaimers) */
-.small-text {
-  font-size: clamp(0.8rem, 0.9vw, 0.875rem); /* 13px → 14px */
-  line-height: 1.4;
-}
+h1{font-size:clamp(2.25rem,5vw,3rem)}
+h2{font-size:clamp(1.5rem,3.5vw,2rem)}
+h3{font-size:clamp(1.25rem,2.5vw,1.5rem)}
+.small-text{font-size:clamp(.8rem,.9vw,.875rem);line-height:1.4}
 
 img{max-width:100%;height:auto;display:block}
-
 .logo{height:60px;width:auto}
 
 /* ----------------------------------------------------
    CONTAINER
 ---------------------------------------------------- */
-.container{
-  max-width:1200px;
-  margin:0 auto;
-  padding:0 1rem;
-}
+.container{max-width:1200px;margin:0 auto;padding:0 1rem}
 
 /* ----------------------------------------------------
-   HEADER – basis (alle pagina's)
+   HEADER
 ---------------------------------------------------- */
 header{
-  position: relative;
+  position:relative;
   color:#f0f0ed;
-  background: linear-gradient(to bottom, rgba(0,0,0,.15), rgba(0,0,0,.55)),
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,.15), rgba(0,0,0,.55)),
     url('images/poolhouse1.jpg') center/cover no-repeat;
-  min-height: 400px;                      /* compacte standaard */
+  min-height:400px;
   box-shadow:0 4px 8px rgba(0,0,0,.1);
 }
-
-/* alleen voor de homepagina: grotere header + foto */
-body.home-page header {
-  min-height: 600px;
+body.home-page header{
+  min-height:600px;
   background:
     linear-gradient(to bottom, rgba(0,0,0,.15), rgba(0,0,0,.55)),
     url('images/poolhouse1.jpg') center/cover no-repeat;
 }
+.container.topbar{background:rgba(12,12,12,.81);padding:0;margin:0}
 
-header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  max-width: 100%;
-  margin: 0 auto;
+header .container{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:1rem 2rem;max-width:100%;margin:0 auto;
 }
 
-.branding { display:flex; align-items:center; gap:1rem; }
-.branding img.logo { height:60px; width:auto; display:block; }
-
+.branding{display:flex;align-items:center;gap:1rem;padding:.5rem 2rem}
+.branding img.logo{height:50px;width:auto;display:block}
 .branding h1{
-  font-size:2rem; line-height:1; margin:0; color:#f0f0ed;
-  font-family:'Oswald',sans-serif; font-weight:400;
+  font-size:1.5rem;line-height:1;margin:0;color:#fafaea;
+  font-family:'Oswald',sans-serif;font-weight:400;
 }
-.slogan{
-  font-size:1.2rem; color:#f0f0ed; margin:.2rem 0 0 .2rem;
-  font-family:'Oswald',sans-serif;
-}
+.slogan{font-size:1rem;color:#fafaea;margin:.2rem 0 0 .2rem;font-family:'Oswald',sans-serif;font-weight:200}
 
-header nav{ margin-left:auto; }
+header nav{margin-left:auto}
 
-#primary-nav {
-  padding: 0.5rem 1.5rem;
-  border-radius: 6px;
-}
-
-#primary-nav .nav-links{
-  list-style:none; display:flex; align-items:center; gap:1.25rem;
-  
-}
+#primary-nav{padding:.5rem 1.5rem;border-radius:6px}
+#primary-nav .nav-links{list-style:none;display:flex;align-items:center;gap:1.25rem}
 #primary-nav .nav-links a{
-  color:#fafaea; font-weight:500; font-size:1.3rem;
-  font-family:'Oswald',sans-serif; text-decoration:none;
-  padding:6px 12px; border-radius:6px;
-  transition:background-color .3s ease, color .3s ease;
+  color:#fafaea;font-weight:500;font-size:1.3rem;
+  font-family:'Oswald',sans-serif;text-decoration:none;
+  padding:6px 12px;border-radius:6px;
+  transition:background-color .3s ease,color .3s ease;
 }
-#primary-nav .nav-links a:hover{
-  background-color: rgba(0, 0, 0, 0.6);
-  color:#fafaea;
-}
+#primary-nav .nav-links a:hover{background:rgba(176,176,168,.6);color:#0d0d0d}
 
-/* Hamburger (desktop verbergen) */
+/* Hamburger */
 .hamburger{
-  display:none; flex-direction:column; justify-content:center; gap:5px;
-  background:none; border:none; cursor:pointer; padding:.5rem; z-index:10;
+  display:none;flex-direction:column;justify-content:center;gap:5px;
+  background:none;border:none;cursor:pointer;padding:.5rem;z-index:10;
 }
-.hamburger-bar{
-  width:25px; height:3px; background-color:#fff; border-radius:2px;
-  transition:all .3s ease-in-out;
-}
+.hamburger-bar{width:25px;height:3px;background:#fff;border-radius:2px;transition:all .3s}
 
 /* ----------------------------------------------------
    HERO (in header)
 ---------------------------------------------------- */
-body.home-page header { position: relative; }
+body.home-page header{position:relative}
+body.home-page header .hero-content{
+  position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);
+  text-align:center;width:100%;padding:0 1rem;z-index:1;
+}
+.hero{
+  background:transparent;display:inline-block;padding:1rem 2rem;border-radius:6px;
+  max-width:1100px;margin:0 auto;
+}
+.hero h1{font-family:'Oswald',sans-serif;font-weight:500;font-size:clamp(1.8rem,3vw,2.3rem);color:#fff;margin-bottom:.75rem}
+.hero p{font-family:'Roboto',sans-serif;font-size:clamp(1rem,2vw,1.15rem);color:#f0f0f0;margin:0 auto 1.25rem;line-height:1.5;max-width:70ch}
+.hero-buttons{display:flex;justify-content:center;gap:1rem;}
+.btn{display:inline-block;background:#3ca35c;color:#fff;padding:.65rem 1.25rem;border-radius:6px;font-weight:400; max-width: clamp(70ch, 90%, 110ch); transition:background .25s,color .25s,transform .08s}
+.btn:hover{background:#2e874b;color:#fff;text-decoration:none}
+.btn:active{transform:translateY(1px)}
 
-body.home-page header .hero-content {
-  position: absolute;
-  bottom: 1.5rem;
-  left: 50%;
-  transform: translateX(-50%);
+/* === INTRO & PROCES (final, single source of truth) =================== */
+/* Sections take full content width (no 100vw overflow) */
+.intro-block,
+.proces-section{
+  width:100%;
+  margin:clamp(32px,4vw,48px) 0;
+}
+
+/* 1/3–2/3 grids with equal heights */
+.intro-block > .container,
+.proces > .container{
+  max-width:100%;
+  padding:0 clamp(12px,2vw,24px);
+  display:grid;
+  align-items:stretch;                      /* columns equal height */
+  gap:clamp(16px,3vw,40px);
+  min-height:clamp(360px,45vw,560px);
+}
+
+/* Intro: photo left (1/3), text right (2/3) */
+.intro-block > .container{
+  grid-template-columns:minmax(0,1fr) minmax(0,2fr);
+}
+
+/* Proces: text left (2/3), photo right (1/3) */
+.proces > .container{
+  grid-template-columns:minmax(0,2fr) minmax(0,1fr);
+}
+
+/* Photo columns */
+.intro-image,
+.proces-image{
+  position:relative;
+  overflow:hidden;
+  border-radius:8px;
+}
+
+/* Image fills its column */
+.intro-image > img,
+.proces-image > img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  border-radius:8px;
+}
+
+/* Overlays for white title contrast */
+.intro-image::after,
+.proces-image::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:8px;
+  pointer-events:none;
+}
+.intro-image::after { background:linear-gradient(to bottom, rgba(0,0,0,.75), rgba(0,0,0,.45)); }
+.proces-image::after{ background:linear-gradient(to bottom, rgba(0,0,0,.60), rgba(0,0,0,.30)); }
+
+/* Titles INSIDE the photos (matches your HTML) */
+.intro-image > h2,
+.proces-image > h2{
+  position:absolute;
+  top:10%;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:2;
+  width:min(92%, 46rem);           /* never spills out */
+  margin:0;
+  color:#fafaea;
+  text-align:center;
+  font-family:'Oswald',sans-serif;
+  font-weight:500;
+  font-size:clamp(1.6rem,3.5vw,2.6rem);
+  line-height:1.15;
+  text-shadow:0 2px 6px rgba(0,0,0,.35);
+  text-wrap:balance;
+}
+
+/* Text columns – tidy, centered, with nice rhythm */
+.intro-text,
+.proces-text {
+  align-self: center;
   text-align: center;
-  width: 100%;
-  padding: 0 1rem;
-  z-index: 1;
+  padding: clamp(20px, 3.5vw, 44px);
+  max-width: clamp(70ch, 90%, 110ch);  /* 👈 was 70ch */
+  margin-inline: auto;
+  font-size: clamp(1rem, 1.2vw, 1.125rem); /* 16px → max ~18px */
+  line-height: 1.7;                        /* prettige leesbaarheid */
 }
 
-.hero {
-  background: rgba(0, 0, 0, 0.268);  /* donkerdere overlay */
-  display: inline-block;           /* compact rond content */
-  padding: 1rem 2rem;
-  border-radius: 6px;
-  max-width: 1100px;
-  margin: 0 auto;
+
+.intro-text p + p,
+.proces-text p + p{ margin-top:1.25rem; }
+
+/* Responsive */
+@media (max-width:900px){
+  .intro-block > .container,
+  .proces > .container{ grid-template-columns:1fr; min-height:unset; }
+
+  .intro-image,
+  .proces-image{ min-height:260px; border-radius:0; }
+
+  /* keep titles in the photo on mobile too – readable thanks to overlay */
+  .intro-image > h2,
+  .proces-image > h2{ width:92%; }
 }
 
-.hero h1 {
-  font-family: 'Oswald', sans-serif;
-  font-weight: 500;
-  font-size: clamp(1.8rem, 3vw, 2.3rem);
-  color: #fff;
-  margin-bottom: 0.75rem;
-}
-
-.hero p {
-  font-family: 'Roboto', sans-serif;
-  font-size: clamp(1rem, 2vw, 1.15rem);
-  color: #f0f0f0;
-  margin: 0 auto 1.25rem;
-  line-height: 1.5;
-  max-width: 70ch;
-}
-
-.hero-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.btn {
-  display: inline-block;
-  background: #3ca35c;
-  color: #fff;
-  padding: 0.65rem 1.25rem;
-  border-radius: 6px;
-  font-weight: 600;
-  transition: background 0.25s, color 0.25s, transform 0.08s;
-}
-
-.btn:hover {
-  background: #2e874b;
-  color: #fff;
-  text-decoration: none;
-}
-
-.btn:active {
-  transform: translateY(1px);
-}
 
 /* ----------------------------------------------------
-   INTRO
+   FOTO-BREAK
 ---------------------------------------------------- */
-.intro-block{max-width:1200px;margin:3rem auto;padding:0 1rem}
-.intro-block .container{display:grid;grid-template-columns:250px 1fr;gap:2rem;align-items:center;}
-.intro-text{text-align:left;margin:0}
-.intro-image img{width:250px;height:auto;border-radius:6px}
-
-/* ----------------------------------------------------
-   PROCES
----------------------------------------------------- */
-.proces{max-width:1200px;margin:3rem auto;padding:0 1rem}
-.proces .container{display:grid;grid-template-columns:1fr 250px;gap:2rem;align-items:center;}
-.proces-text{text-align:left;margin:0;display:flex;flex-direction:column;justify-content:center}
-.proces-image{justify-self:end}
-.proces-image img{width:250px;height:auto;border-radius:6px}
+.foto-zone{
+  width:100%;max-height:350px;margin:0;padding:0;overflow:hidden;
+  background-color:linear-gradient(to bottom, rgba(0,0,0,.356), rgba(0,0,0,.55));
+}
+.foto-zone img{width:100%;height:auto;display:block}
 
 /* ----------------------------------------------------
    SERVICES / REALISATIES-GRID
 ---------------------------------------------------- */
-.services-section {
-  margin: 3rem auto;
-  padding: 0 1rem;
-  max-width: 90%;
+.services-section{width:100vw;margin:3rem 0;padding:0 1rem}
+.services-intro h2{
+  margin-bottom:2rem;
+  font-family:'Oswald',sans-serif;
+  font-weight:500;
+  font-size:clamp(1.6rem,3.5vw,2.6rem);
+  text-align: left; 
+  padding: 0rem 0rem 0rem 20rem;
 }
-
-.services-intro {
-  text-align: center;
-  margin-bottom: 2rem;
+.services-grid{
+  display:grid;grid-template-columns:repeat(auto-fit, minmax(320px,1fr));
+  gap:1.5rem;max-width:100%;
 }
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.5rem;
-  max-width: 100%;
+.service-card{
+  background:#fff;border-radius:6px;padding:1.25rem;box-shadow:var(--shadow-sm);
+  text-align:center;display:flex;flex-direction:column;height:100%;
+  text-decoration:none;color:inherit;transition:transform .25s, box-shadow .25s;
 }
-
-.service-card {
-  background: #fff;
-  border-radius: 6px;
-  padding: 1.25rem;
-  box-shadow: var(--shadow-sm);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  text-decoration: none; /* <a> zonder onderlijn */
-  color: inherit;        /* tekstkleur overnemen */
-  transition: transform 0.25s, box-shadow 0.25s;
-  will-change: transform;
-}
-
-/* Zelfde feedback voor hover én keyboard-focus */
-.service-card:hover,
-.service-card:focus-visible {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-  outline: none;
-  border-radius: 6px;
-}
-
-/* Duidelijke focusring (alleen via keyboard) */
-.service-card:focus-visible {
-  outline: 2px solid #000;
-  outline-offset: 4px;
-}
-
-.service-card .image {
-  width: 100%;
-  aspect-ratio: 16/9;
-  overflow: hidden;
-  border-radius: 6px;
-  margin-bottom: 1rem;
-}
-
-.service-card .image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+.service-card:hover,.service-card:focus-visible{transform:translateY(-2px);box-shadow:var(--shadow-md);outline:none}
+.service-card:focus-visible{outline:2px solid #000;outline-offset:4px}
+.service-card .image{width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:6px;margin-bottom:1rem}
+.service-card .image img{width:100%;height:100%;object-fit:cover;display:block}
 
 /* ----------------------------------------------------
-   CONTACTEER-ONS BUTTON ONDERAAN
+   CONTACTEER-ONS BUTTON
 ---------------------------------------------------- */
-.Contacteer-ons {
-  margin: 3rem auto;
-  text-align: center;
+.Contacteer-ons{margin:3rem auto;text-align:center}
+.Contacteer-ons .btn{
+  display:inline-block;margin:0 auto;padding:.75rem 1.5rem;background:#3ca35c;
+  color:#fff;border-radius:6px; max-width: clamp(70ch, 90%, 110ch); font-weight:400;text-decoration:none;transition:background .25s ease;
 }
-
-.Contacteer-ons .btn {
-  display: inline-block;
-  margin: 0 auto;
-  padding: 0.75rem 1.5rem;
-  background-color: #3ca35c;
-  color: #fff;
-  border-radius: 6px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: background 0.25s ease;
-}
-
-.Contacteer-ons .btn:hover {
-  background-color: #3c4b24;
-}
+.Contacteer-ons .btn:hover{background:#3c4b24}
 
 /* ----------------------------------------------------
    FOOTER
 ---------------------------------------------------- */
-.site-footer{background:#2f2f2f;color:whitesmoke;font-size:.9rem;padding:2rem 1rem}
-.footer-container{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:3rem;text-align:left;}
-.footer-column h4{font-size:1.2rem;text-transform:uppercase;margin-bottom:1rem;font-weight:400;color:whitesmoke;}
+.site-footer{background:#1c1c1cfb;color:whitesmoke;font-size:.9rem;padding:2rem 1rem}
+.footer-container{
+  max-width:1400px;margin:0 auto;display:grid;
+  grid-template-columns:repeat(4,1fr);gap:3rem;text-align:left;
+}
+.footer-column h4{font-size:1.2rem;text-transform:uppercase;margin-bottom:1rem;font-weight:400;color:whitesmoke}
 .footer-logo{max-width:110px;margin-bottom:1rem}
 .footer-bottom{text-align:center;padding-top:.75rem}
 .footer-bottom a{color:whitesmoke;margin:0 .5rem}
@@ -354,557 +311,152 @@ body.home-page header .hero-content {
 .site-footer ul{list-style:none;padding:0;margin:0}
 .site-footer li{margin:.25rem 0}
 
-
 /* ----------------------------------------------------
-   Realisaties-totaal pagina
+   REALISATIES – OVERVIEW
 ---------------------------------------------------- */
-/* Pagina-container */
-.realisaties-totaal {
-  margin: 3rem auto;
-  padding: 0 1rem;
-  max-width: 90%
+.realisaties-totaal{margin:3rem auto;padding:0 1rem;max-width:90%}
+.realisaties-totaal h2{font-size:2rem;margin:0 0 3rem;text-align:center}
+.realisaties-grid{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.realisatie-card{
+  background:#fff;border-radius:6px;padding:1.25rem;box-shadow:var(--shadow-sm);
+  text-align:center;display:flex;flex-direction:column;height:100%;
+  transition:transform .25s, box-shadow .25s;text-decoration:none;color:inherit;
 }
-
-.realisaties-totaal h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  text-align: center;
-  margin: 0rem 0rem 3rem 0rem;
-}
-
-/* Grid met kaarten */
-.realisaties-grid {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-}
-
-/* Kaarten */
-.realisatie-card {
-  background: #fff;
-  border-radius: 6px;
-  padding: 1.25rem;
-  box-shadow: var(--shadow-sm);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  transition: transform 0.25s, box-shadow 0.25s;
-  will-change: transform; /* vloeiendere animatie */
-  text-decoration: none;  /* als <a> */
-  color: inherit;         /* tekstkleur overnemen */
-}
-
-/* Zelfde visuele feedback voor hover én keyboard-focus */
-.realisatie-card:hover,
-.realisatie-card:focus-visible {
-  transform: translateY(-2px);   /* subtiele lift i.p.v. scale (minder layout shift) */
-  box-shadow: var(--shadow-md);
-  border-radius: 6px;
-  outline: none;                  /* reset standaard outline */
-}
-
-/* Extra duidelijke focusring (alleen bij toetsenbord) */
-.realisatie-card:focus-visible {
-  outline: 2px solid #000;
-  outline-offset: 4px;
-}
-
-/* Beeldvak in de kaart */
-.realisatie-card .image {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  border-radius: 6px;
-  margin-bottom: 1rem;
-}
-
-/* Afbeelding netjes vullen zonder rekken */
-.realisatie-card .image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block; /* voorkomt kleine gaps/line-height artefacts */
-}
+.realisatie-card:hover,.realisatie-card:focus-visible{transform:translateY(-2px);box-shadow:var(--shadow-md);border-radius:6px;outline:none}
+.realisatie-card:focus-visible{outline:2px solid #000;outline-offset:4px}
+.realisatie-card .image{width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:6px;margin-bottom:1rem}
+.realisatie-card .image img{width:100%;height:100%;object-fit:cover;display:block}
 
 /* ----------------------------------------------------
    CONTACTPAGINA
 ---------------------------------------------------- */
+.contactname{text-align:center;margin:2rem auto 1.5rem;max-width:800px;padding:0 1rem}
+.contactname h1{font-size:2rem;margin-bottom:.5rem}
+.contactname p{font-size:1.1rem;color:#555}
+.contacteer-ons{color:whitesmoke;font-weight:400;font-size:1.5rem}
 
-/* Titelblok boven het paneel */
-.contactname {
-  text-align: center;
-  margin: 2rem auto 1.5rem;
-  max-width: 800px;
-  padding: 0 1rem;
-}
-
-.contactname h1 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.contactname p {
-  font-size: 1.1rem;
-  color: #555;
-}
-
-.contacteer-ons {
-  color: whitesmoke;
-  font-weight: 400;
-  font-size: 1.5rem;
-}
-
-/* Buitenpaneel */
-.contact-wrapper {
-  max-width: 1200px;
-  margin: 1rem auto 2rem;
-  padding: 1.25rem;
+.contact-wrapper{
+  max-width:1200px;margin:1rem auto 2rem;padding:1.25rem;
   background:
-    linear-gradient(to right, rgba(47, 47, 47, 0.659), rgba(47, 47, 47, 0.325)),
+    linear-gradient(to right, rgba(47,47,47,.659), rgba(47,47,47,.325)),
     url('images/houtskelet3.jpg') center/cover no-repeat;
-  border: 1px solid #cfcdbd;
-  border-radius: 6px;
-  box-shadow: var(--shadow-sm);
-  color: #fff;
+  border:1px solid #cfcdbd;border-radius:6px;box-shadow:var(--shadow-sm);color:#fff;
 }
 
-/* Contact-sectie: enkel formulier, geen kaart */
-.contact-section {
-  display: block;              /* geen grid meer */
-  max-width: 800px;            /* optioneel: beperk breedte */
-  margin: 0 auto;              /* centreren in de wrapper */
+.contact-section{display:block;max-width:800px;margin:0 auto}
+.contact-form{padding:1rem 1.25rem;border-radius:6px}
+.contact-form h2{font-size:1.6rem;margin:0 0 .75rem}
+.contact-form label{display:block;font-weight:500;margin:.65rem 0 .35rem}
+.contact-form input,.contact-form textarea{
+  width:100%;padding:.85rem 1rem;background:#f9f9f6;color:var(--antraciet);
+  border:2px solid #cfcdbd;border-radius:6px;outline:none;transition:border-color .2s, box-shadow .2s, background .2s;
 }
-
-.contact-form {
-  padding: 1rem 1.25rem;
-  border-radius: 6px;
-}
-
-.contact-form h2 {
-  font-size: 1.6rem;
-  margin: 0 0 0.75rem;
-}
-
-.contact-form label {
-  display: block;
-  font-weight: 500;
-  margin: 0.65rem 0 0.35rem;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 0.85rem 1rem;
-  background: #f9f9f6;
-  color: var(--antraciet);
-  border: 2px solid #cfcdbd;
-  border-radius: 6px;
-  outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: var(--olijfgroen);
-  box-shadow: 0 0 0 3px rgba(81, 99, 46, 0.18);
-  background: #fff;
-}
-
-/* Verstuur-knop */
-.contact-form button {
-  margin-top: 0.9rem;
+.contact-form input:focus,.contact-form textarea:focus{border-color:var(--olijfgroen);box-shadow:0 0 0 3px rgba(81,99,46,.18);background:#fff}
+.contact-form button{
+  margin-top: .9rem;
   background: #3ca35c;
   color: #fff;
-  padding: 0.85rem 1rem;
+  padding: .85rem 1rem;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   font-weight: 600;
-  font-size: 0.95rem;
-  transition: background 0.25s, color 0.25s, transform 0.08s;
+  font-size: clamp(0.95rem, 1vw, 1.05rem);
+  transition: background .25s, color .25s, transform .08s;
   align-self: flex-start;
 }
 
-.contact-form button:hover {
-  background: #fafaea;
-  color: var(--antraciet);
-}
-
-.contact-form button:active {
-  transform: translateY(1px);
-}
-
+.contact-form button:hover{background:#fafaea;color:var(--antraciet)}
+.contact-form button:active{transform:translateY(1px)}
 
 /* ----------------------------------------------------
    MEDIA QUERIES
 ---------------------------------------------------- */
-
-/* Header */
 @media (max-width:768px){
-header .container {
-  position: relative; /* Voor positionering van #primary-nav */
-  flex-wrap: nowrap;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.branding {
-  flex-shrink: 1;
-  min-width: 0;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.branding h1 {
-    font-size: 1rem;
+  /* Header */
+  header .container{
+    position:relative;flex-wrap:nowrap;flex-direction:row;align-items:center;justify-content:space-between;gap:1rem;
   }
+  .branding{flex-shrink:1;min-width:0;gap:.75rem}
+  .branding h1{font-size:1rem}
+  .slogan{font-size:.6rem}
+  .logo{height:35px}
+  .hamburger{display:flex;align-self:center;z-index:20;margin-left:1rem}
+  .hamburger-bar{width:25px;height:3px;background:#fff;border-radius:2px;transition:all .3s}
 
-.slogan {
-    font-size: 0.6rem;
-  }
+  #primary-nav{display:none;position:absolute;top:100%;right:1rem;width:260px;background:rgba(47,47,47,.95);padding:1rem;border-radius:6px;box-shadow:0 4px 12px rgba(0,0,0,.2);z-index:30}
+  #primary-nav.open{display:block;top:100%;right:1rem;width:180px;background:rgba(47,47,47,.95);padding:1rem;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,.2);z-index:15}
+  #primary-nav .nav-links{display:flex;flex-direction:column;gap:1rem;margin:0;padding:0;align-items:stretch;text-align:center}
+  #primary-nav .nav-links a{font-size:.9rem}
 
-.logo {
-    height: 35px;
-  }
+  /* Body fonts iets compacter */
+  h1{font-size:clamp(2rem,5vw,3rem)}
+  h2{font-size:clamp(1.5rem,3.5vw,2rem)}
+  h3{font-size:clamp(1.25rem,2.5vw,1.5rem)}
+  body{font-size:clamp(.95rem,1.2vw,1rem)}
 
-.hamburger {
-  display: flex;
-  align-self: center;
-  z-index: 20;
-  margin-left: 1rem;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.5rem;
+  /* Hero */
+  .hero .container{display:flex;flex-direction:column;align-items:center;max-width:100%;gap:1rem}
+  .hero .btn{display:block;width:100%;max-width:280px;margin:.5rem auto;text-align:center}
+  body.home-page header .hero-content h1{font-size:1.5rem;line-height:1.2;margin-bottom:.5rem}
+  body.home-page header .hero-content p{font-size:.95rem;line-height:1.4;max-width:90%;margin:0 auto 1rem}
+  body.home-page header .hero-content .btn{padding:.6rem 1rem;font-size:.9rem;margin:.25rem}
+
+  /* Intro */
+  .intro-block .container{grid-template-columns:1fr;min-height:unset}
+  .intro-image{min-height:260px}
+  .intro-text h2{position:static;width:auto;color:#111;text-shadow:none;margin-bottom:.75rem;padding:0}
+  .intro-text{padding:1.25rem;text-align:center}
+
+  /* Proces */
+  .proces .container{grid-template-columns:1fr}
+  .proces-image{text-align:center;border-radius:0}
+  .proces-text .section-title{position:static;left:auto;width:auto;color:#111;text-shadow:none;margin:1rem 0;padding:0}
+  .proces-image h2{position:static;transform:none;color:#111;text-shadow:none;margin:1rem 0}
+
+  /* Services */
+  .services-grid{grid-template-columns:1fr}
+  .service-card{padding:1rem}
+
+  /* Footer compacter */
+  .footer-container{grid-template-columns:1fr;text-align:center;gap:1.5rem}
+  .footer-logo{max-width:90px;margin:0 auto 1rem}
+  .site-footer{padding:1rem .5rem;font-size:.8rem}
+  .footer-column h4{font-size:.9rem;margin-bottom:.5rem}
+  .footer-bottom{padding-top:.5rem;font-size:.75rem}
+  .footer-bottom a{margin:0 .3rem}
+
+  /* Contact */
+  .contactname{margin:1rem 1rem 1.5rem;padding:0}
+  .contactname h1{font-size:1.4rem;margin-bottom:.25rem}
+  .contactname p{font-size:1rem;margin:0 auto}
+  .contact-wrapper{padding:.75rem;margin:0 .75rem 1.25rem;border-radius:12px;background-size:cover}
+  .contact-section{grid-template-columns:1fr;gap:.9rem}
+  .contact-form{padding:.75rem}
+  .contact-form input,.contact-form textarea{padding:.8rem .9rem;max-width:100%}
+  .contact-form button{width:100%;max-width:320px;margin:.75rem auto 0;align-self:center;padding:.75rem 1rem}
+
+  /* Realisaties */
+  .realisaties-totaal{text-align:center;padding:0 1rem}
+  .realisaties-totaal h2{font-size:1.75rem;margin-left:auto;margin-right:auto}
+  .realisaties-grid{grid-template-columns:1fr}
+  .realisatie-card{padding:1rem}
 }
 
-.hamburger-bar {
-  width: 25px;
-  height: 3px;
-  background-color: #fff;
-  border-radius: 2px;
-  transition: all 0.3s ease-in-out;
-}
-
-#primary-nav {
-  display: none;
-  position: absolute;
-  top: 100%;
-  right: 1rem;
-  width: 260px;               /* → beperk de breedte van het menu */
-  background: rgba(47, 47, 47, 0.95);
-  padding: 1rem;
-  border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  z-index: 30;
-}
-
-#primary-nav.open {
-  display: block;
-  position: absolute;
-  top: 100%;
-  right: 1rem;           /* Afstand van de rechterkant */
-  width: 180px;          /* 👈 Kleiner menuveld dan nu */
-  background: rgba(47, 47, 47, 0.95);
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  z-index: 15;
-}
-
-  #primary-nav .nav-links {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin: 0;
-    padding: 0;
-    align-items: stretch;
-    text-align: center;
-  }
-
-#primary-nav .nav-links a {
-  font-size: 0.9rem; /* of kleiner zoals 0.95rem of 0.9rem */
-}
-
-/* Body */
-h1 { font-size: clamp(2rem, 5vw, 3rem); }
-h2 { font-size: clamp(1.5rem, 3.5vw, 2rem); }
-h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
-body { font-size: clamp(0.95rem, 1.2vw, 1rem); }
-
-/* Hero */
-.hero .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max width:100%;
-  gap: 1rem; /* ruimte tussen de knoppen */
-  }
-
-.hero .btn {
-  display: block;
-  width: 100%;
-  max-width: 280px;
-  margin: 0.5rem auto;
-  text-align: center;
-}
-
-  body.home-page header .hero-content h1 {
-    font-size: 1.5rem;      /* kleiner dan desktop */
-    line-height: 1.2;
-    margin-bottom: 0.5rem;
-  }
-
-  body.home-page header .hero-content p {
-    font-size: 0.95rem;     /* tekst iets kleiner */
-    line-height: 1.4;
-    max-width: 90%;
-    margin: 0 auto 1rem;
-  }
-
-  body.home-page header .hero-content .btn {
-    padding: 0.6rem 1rem;
-    font-size: 0.9rem;
-    margin: 0.25rem;
-  }
-
-/* Inhoud Index-pagina */
-.intro-text,
-.proces-text,
-.services-intro {
-  text-align: center;
-}
-
-.intro-text h2,
-.proces-text .section-title,
-.services-intro h2 {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.intro-block .container,.proces .container{
-  grid-template-columns:1fr;
-  align-items:center;
-}
-  
-.intro-image img,.proces-image img{
-  margin:0 auto;
-  width:min(250px,85vw)
-}
-  
-.proces-image{
-  justify-self:center
-}
-
-.services-grid{
-  grid-template-columns: 1fr; 
-}
-
-.service-card{
-  padding: 1rem;
-}
-
-/* Footer */
-/* Compactere footer op mobiele weergave */
-.footer-container{
-  grid-template-columns:1fr;
-  text-align:center;
-  gap:1.5rem;
-}
-  
-.footer-logo{
-  max-width: 90px;
-  margin:0 auto 1rem
-}
-
-.site-footer ul{
-  list-style:none;
-  padding:0;
-  margin:0
-}
-
-.site-footer li{
-  margin:.25rem 0
-}
-
-.site-footer {
-  padding: 1rem 0.5rem;
-  font-size: 0.8rem;
-}
-
-.footer-column h4 {
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
-}
-
-.footer-bottom {
-  padding-top: 0.5rem;
-  font-size: 0.75rem;
-}
-
-.footer-bottom a {
-  margin: 0 0.3rem;
-}
-
-
-/* Contact-formulier */
-.contactname {
-  margin: 1rem 1rem 1.5rem;
-  padding: 0;
-}
-
-.contactname h1 {
-  font-size: 1.4rem;
-  margin-bottom: 0.25rem;
-}
-
-.contactname p {
-  font-size: 1rem;
-  margin: 0 auto;
-}
-
-.contact-wrapper {
-  padding: 0.75rem;
-  margin: 0 0.75rem 1.25rem;
-  border-radius: 12px;
-  background-size: cover;
-}
-
-.contact-section {
-  grid-template-columns: 1fr;
-  gap: 0.9rem;
-}
-
-.contact-form {
-  padding: 0.75rem;
-}
-
-.contact-form input,.contact-form textarea {
-  padding: 0.8rem 0.9rem;
-  max-width: 100%;
-}
-
-.contact-form button {
-  width: 100%;
-  max-width: 320px;
-  margin: 0.75rem auto 0;
-  align-self: center;
-  padding: 0.75rem 1rem;
-}
-
-/* Realisaties-totaal Mobiele toestellen */
-
-  /* Container: gewoon centreren, geen grid hier */
-  .realisaties-totaal {
-    text-align: center;
-    padding: 0 1rem; /* blijft netjes aan randen */
-  }
-
-  /* Titel iets compacter op mobiel */
-  .realisaties-totaal h2 {
-    font-size: 1.75rem;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  /* Grid echt naar één kolom op mobiel */
-  .realisaties-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Kaarten iets compacter op mobiel */
-  .realisatie-card {
-    padding: 1rem;
-  }
-
-  /* Optioneel: beeldverhouding iets vierkanter voor small screens
-     (laat weg als je 16/9 wil houden) */
-  /* .realisatie-card .image { aspect-ratio: 4 / 3; } */
-
-  /* Intro/proces afbeeldingen centreren zonder grid nodig te hebben */
-  .intro-image img,
-  .proces-image img {
-    display: block;
-    margin: 0 auto;
-    width: min(320px, 90vw);
-    height: auto;
-  }
-
-  /* Als .proces-image géén grid parent heeft, centreren via tekst */
-  .proces-image {
-    text-align: center;
+/* ----------------------------------------------------
+   Touch: hover-effect neutraliseren
+---------------------------------------------------- */
+@media (hover:none){
+  .realisatie-card:hover, .service-card:hover{
+    transform:none;box-shadow:var(--shadow-sm);
   }
 }
 
 /* ----------------------------------------------------
-   Touch devices: hover-effect neutraliseren (geen “springen”)
+   Extra hero tweaks op mobiel (optioneel)
 ---------------------------------------------------- */
-
-@media (hover: none) {
-  .realisatie-card:hover,
-  .service-card:hover {
-    transform: none;
-    box-shadow: var(--shadow-sm);
-  }
+@media (max-width:768px){
+  body.home-page header .hero-content{bottom:.75rem;max-width:95%;padding:0 .75rem}
+  body.home-page header .hero{max-width:95%;padding:.9rem 1rem;border-radius:6px}
 }
 
-
-/* Hero compacter op mobiel */
-@media (max-width: 768px) {
-  body.home-page header .hero-content {
-    bottom: .75rem;
-    max-width: 95%;
-    padding: 0 .75rem;
-  }
-
-  /* Als je een .hero wrapper hebt rond de tekst, maak die ook compacter */
-  body.home-page header .hero {
-    max-width: 95%;
-    padding: .9rem 1rem;
-    border-radius: 6px;
-  }
-
-  /* OVERRIDE de desktop clamp-groottes */
-  body.home-page header .hero-content h1 {
-    font-size: 1.2rem !important;   /* forceer kleiner op mobiel */
-    line-height: 1;
-    margin-bottom: .5rem;
-  }
-
-  body.home-page header .hero-content p {
-    font-size: .8rem !important;
-    line-height: 1;
-    max-width: 90%;
-    margin: 0 auto 1rem;
-  }
-
-  /* knoppen compacter en onder elkaar */
-  body.home-page header .hero-buttons {
-    flex-direction: column;
-    gap: .6rem;
-  }
-  body.home-page header .btn {
-    width: 100%;
-    max-width: 320px;
-    padding: .7rem 1rem;
-    font-size: .95rem;
-    margin: 0 auto;
-  }
-
-   .hero-buttons {
-    width: 100%;
-    max-width: 320px;
-    padding: .7rem 1rem;
-    font-size: .85rem;
-    margin: 0 auto;
-  }
-
-}
