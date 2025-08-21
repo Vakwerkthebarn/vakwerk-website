@@ -455,53 +455,6 @@ body.contact-page header .contactname p,
   .realisatie-card:hover,.service-card:hover{transform:none;box-shadow:var(--shadow-sm)}
 }
 
-/* === Consistente afstand: onderkant knop ↔ onderrand header === */
-
-/* Zorg dat er niets extra “onder” de knop bijtelt */
-body.home-page header .hero-buttons,
-body.realisaties-page header .realisaties-text .hero-buttons,
-body.contact-page    header .contactname   .hero-buttons {
-  margin-bottom: 0;
-}
-
-/* === Uniforme CTA-positie in alle hero's === */
-:root {
-  /* afstand knop ↔ onderrand header */
-  --cta-bottom: clamp(16px, 2vw, 24px);
-  /* gereserveerde ruimte binnen het blok voor de knophoogte */
-  --cta-reserve: clamp(44px, 6vw, 56px);
-}
-
-/* Reserveer ruimte onderin het hero-blok voor de knop */
-body.home-page header .hero-content,
-body.realisaties-page header .realisaties-text,
-body.contact-page    header .contactname {
-  padding-bottom: calc(var(--cta-bottom) + var(--cta-reserve));
-}
-
-/* Plak de knop onderaan, gecentreerd */
-body.home-page header .hero-buttons,
-body.realisaties-page header .realisaties-text .hero-buttons,
-body.contact-page    header .contactname   .hero-buttons {
-  position: absolute;
-  left: 50%;
-  bottom: var(--cta-bottom);
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: center;
-  margin: 0; /* geen extra ondermarge */
-  z-index: 2;
-}
-
-/* Mobiel eventueel iets compacter */
-@media (max-width: 768px) {
-  :root {
-    --cta-bottom: clamp(12px, 2vw, 16px);
-    --cta-reserve: clamp(40px, 7vw, 52px);
-  }
-}
-
-
 
 /* Intro & Proces – smallere tekstkolom alleen op de homepage */
 body.home-page .intro-text,
