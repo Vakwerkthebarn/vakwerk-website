@@ -265,11 +265,11 @@ body.home-page header .hero-content{
 .services-section{width:100vw;margin:3rem 0;padding:0 1rem}
 .services-intro h2{
   margin-bottom:2rem;
-  font-family:'Oswald',sans-serif;
-  font-weight:500;
-  font-size:clamp(1.6rem,3.5vw,2.6rem);
+  font-family: 'Bebas Neue';
+  font-size:clamp(2rem,3.5vw,2.6rem);
   text-align: center; 
 }
+
 .services-grid{
   display:grid;grid-template-columns:repeat(auto-fit, minmax(320px,1fr));
   gap:1.5rem;max-width:100%;
@@ -362,7 +362,7 @@ body.home-page header .hero-content{
   font-weight: 600;
   font-size: clamp(0.95rem, 1vw, 1.05rem);
   transition: background .25s, color .25s, transform .08s;
-  align-self: flex-start;
+  align-self: center;
 }
 
 .contact-form button:hover{background:#fafaea;color:var(--antraciet)}
