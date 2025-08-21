@@ -268,8 +268,7 @@ body.home-page header .hero-content{
   font-family:'Oswald',sans-serif;
   font-weight:500;
   font-size:clamp(1.6rem,3.5vw,2.6rem);
-  text-align: left; 
-  padding: 0rem 0rem 0rem 20rem;
+  text-align: center; 
 }
 .services-grid{
   display:grid;grid-template-columns:repeat(auto-fit, minmax(320px,1fr));
@@ -398,7 +397,13 @@ body.home-page header .hero-content{
   /* Hero */
   .hero .container{display:flex;flex-direction:column;align-items:center;max-width:100%;gap:1rem}
   .hero .btn{display:block;width:100%;max-width:280px;margin:.5rem auto;text-align:center}
-  body.home-page header .hero-content h1{font-size:1.5rem;line-height:1.2;margin-bottom:.5rem}
+  body.home-page header .hero-content h1{
+    line-height:1.2;
+    margin-bottom:.5rem;
+    font-family:'Oswald',sans-serif;
+    font-weight:500;
+    font-size:clamp(1.6rem,3.5vw,2.6rem);
+  }
   body.home-page header .hero-content p{font-size:.95rem;line-height:1.4;max-width:90%;margin:0 auto 1rem}
   body.home-page header .hero-content .btn{padding:.6rem 1rem;font-size:.9rem;margin:.25rem}
 
@@ -434,7 +439,7 @@ body.home-page header .hero-content{
   .contact-section{grid-template-columns:1fr;gap:.9rem}
   .contact-form{padding:.75rem}
   .contact-form input,.contact-form textarea{padding:.8rem .9rem;max-width:100%}
-  .contact-form button{width:100%;max-width:320px;margin:.75rem auto 0;align-self:center;padding:.75rem 1rem}
+  .contact-form button{width:50%;max-width:320px;margin:.75rem auto 0;align-self:center;padding:.75rem 1rem}
 
   /* Realisaties */
   .realisaties-totaal{text-align:center;padding:0 1rem}
@@ -460,3 +465,108 @@ body.home-page header .hero-content{
   body.home-page header .hero{max-width:95%;padding:.9rem 1rem;border-radius:6px}
 }
 
+/* ===== Intro & Proces – final override (werkt met jouw HTML) ===== */
+
+/* Grids 1/3–2/3 + gelijke hoogte */
+.intro-block > .container,
+.proces > .container{
+  max-width: 100%;
+  padding: 0 clamp(12px, 2vw, 24px);
+  display: grid;
+  align-items: stretch;                  /* kolommen even hoog */
+  gap: clamp(16px, 4vw, 48px);
+  min-height: clamp(360px, 45vw, 560px);
+}
+
+/* Intro: foto 1/3, tekst 2/3 */
+.intro-block > .container{
+  grid-template-columns: minmax(0,1fr) minmax(0,2fr);
+}
+
+/* Proces: tekst 2/3, foto 1/3 */
+.proces > .container{
+  grid-template-columns: minmax(0,2fr) minmax(0,1fr);
+}
+
+/* Foto-kolommen vullen volledig + overlay */
+.intro-image,
+.proces-image{
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  min-height: 260px;                     /* ook op small screens een blok */
+}
+
+.intro-image > img,
+.proces-image > img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;                      /* geen vervorming */
+  display: block;
+  border-radius: 6px;
+}
+
+/* Contrast-overlays */
+.intro-image::after,
+.proces-image::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 6px;
+  pointer-events: none;
+  z-index: 1;
+}
+.intro-image::after  { background: linear-gradient(to bottom, rgba(0,0,0,.75), rgba(0,0,0,.45)); }
+.proces-image::after { background: linear-gradient(to bottom, rgba(0,0,0,.65), rgba(0,0,0,.35)); }
+
+/* Titels IN de foto (blijven ook op mobiel over de foto) */
+.intro-image > h2,
+.proces-image > .section-title{
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  width: calc(100% - clamp(32px, 6vw, 96px));  /* veilige randen links/rechts */
+  max-width: 44rem;
+  margin: 0;
+  color: #fafaea;                          /* altijd wit */
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+  line-height: 1.15;
+  text-shadow: 0 2px 6px rgba(0,0,0,.35);
+  text-wrap: balance;
+}
+
+/* Tekstkolommen – gecentreerd en luchtig (vullen 2/3-kolom) */
+.intro-text,
+.proces-text{
+  align-self: center;
+  text-align: center;
+  padding: clamp(20px, 3.5vw, 44px);
+  max-width: none;                         /* mag de hele kolom gebruiken */
+}
+.intro-text p + p,
+.proces-text p + p{ margin-top: 1.25rem; }
+
+/* Mobiel stacken (titels blijven in foto en wit) */
+@media (max-width: 900px){
+  .intro-block > .container,
+  .proces > .container{
+    grid-template-columns: 1fr;
+    min-height: unset;
+  }
+  .intro-image,
+  .proces-image{
+    border-radius: 0;
+    min-height: 260px;
+  }
+  .intro-image > h2,
+  .proces-image > .section-title{
+    width: 92%;                           /* iets compacter op small */
+  }
+}
