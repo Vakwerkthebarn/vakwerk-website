@@ -482,3 +482,42 @@ body.home-page .intro-text,
 body.home-page .proces-text { text-align: left; }
 */
 
+/* ============== HEADER BUTTONS — UNIFORM OP MOBIEL ============== */
+
+/* 1) Zet de generieke knopbreedte uit (voorkomt te brede knoppen) */
+.btn { max-width: none; }
+
+/* 2) Zelfde schaal als index-page, op álle pagina's met een header-CTA */
+@media (max-width: 768px){
+  body.home-page header .hero .btn,          /* index */
+  body.realisaties-page header .btn,         /* realisaties */
+  body.contact-page    header .btn {         /* contact */
+    display: block;
+    width: 100%;
+    max-width: 280px;        /* zelfde als index */
+    padding: .6rem 1rem;     /* zelfde als index */
+    font-size: .9rem;        /* zelfde als index */
+    margin: .25rem auto;     /* centreren + beetje ruimte */
+    text-align: center;
+  }
+
+  /* Als je 2 CTA's naast elkaar hebt in de hero */
+  .hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: .75rem;
+    flex-wrap: wrap;         /* voorkomt overlappen */
+  }
+}
+
+/* (optioneel) Trek dit door tot kleine tablets */
+@media (max-width: 1024px){
+  body.home-page header .hero .btn,
+  body.realisaties-page header .btn,
+  body.contact-page    header .btn {
+    max-width: 320px;
+    font-size: .95rem;
+  }
+}
+
+
