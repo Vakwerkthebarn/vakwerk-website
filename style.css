@@ -412,6 +412,11 @@ body.contact-page header .contactname p,
   .proces .container{grid-template-columns:1fr}
   .proces-image{text-align:center;border-radius:0}
 
+  /* Intro en Proces */
+  .intro-text, .proces-text {
+    font-size: .95rem; /* zelfde als hero p */
+  }
+   
   /* Services */
   .services-grid{grid-template-columns:1fr}
   .service-card{padding:1rem}
