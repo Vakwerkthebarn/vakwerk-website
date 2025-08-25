@@ -203,7 +203,7 @@ body.home-page header .hero-content{
   align-self:center;text-align:center;
   padding:clamp(20px,3.5vw,44px);
   max-width:none; /* volledige 2/3 kolom */
-  font-size:clamp(1rem,1.2vw,1.125rem);
+  font-size:clamp(0.9rem,1.2vw,1.125rem);
   line-height:1.7;
 }
 .intro-text p+p,.proces-text p+p{margin-top:1.25rem}
