@@ -428,7 +428,7 @@ body.contact-page header .contactname p,
   .contactname{margin:1rem 1rem 1.5rem;padding:0}
   .contactname h1{font-size:1.4rem;margin-bottom:.25rem}
   .contactname p{font-size:1rem;margin:0 auto}
-  .contact-wrapper{padding:.75rem;margin:0 .75rem 1.25rem;border-radius:12px;background-size:cover}
+  .contact-wrapper{padding:.75rem;margin:2rem 1.25rem;border-radius:12px;background-size:cover}
   .contact-section{grid-template-columns:1fr;gap:.9rem}
   .contact-form{padding:.75rem}
   .contact-form input,.contact-form textarea{padding:.8rem .9rem;max-width:100%}
